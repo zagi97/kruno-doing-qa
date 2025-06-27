@@ -76,26 +76,36 @@ export function Sidebar({ activeSection, isOpen, onClose }: SidebarProps) {
 
   return (
     <>
-      {/* Mobile overlay */}
-      {isOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" onClick={onClose} />}
+      {/* Mobile overlay - IMPROVED */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" 
+          onClick={onClose}
+        />
+      )}
 
-      {/* Sidebar */}
+      {/* Sidebar - IMPROVED RESPONSIVE CLASSES */}
       <div
         className={cn(
-          "fixed top-0 left-0 h-screen w-80 bg-white shadow-lg border-r border-gray-200 z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto",
-          "lg:translate-x-0",
-          isOpen ? "translate-x-0" : "-translate-x-full",
+          // Base classes for all screens
+          "fixed top-0 h-screen bg-white shadow-lg border-r border-gray-200 z-50 overflow-y-auto",
+          // Desktop behavior (lg and up)
+          "lg:left-0 lg:w-80 lg:translate-x-0",
+          // Mobile behavior (below lg)
+          "w-72 transition-transform duration-300 ease-in-out",
+          // Mobile position based on isOpen state
+          isOpen ? "left-0 translate-x-0" : "-left-72 -translate-x-full"
         )}
       >
-        <div className="p-6 border-b border-gray-200">
+        <div className="p-4 lg:p-6 border-b border-gray-200">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="bg-blue-600 rounded-lg p-2">
-                <Book className="text-white text-xl" />
+                <Book className="text-white text-lg lg:text-xl" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900">QA Testing Bootcamp</h2>
-                <p className="text-sm text-gray-600">Complete Professional Guide</p>
+                <h2 className="text-lg lg:text-xl font-bold text-gray-900">QA Testing Bootcamp</h2>
+                <p className="text-xs lg:text-sm text-gray-600">Complete Professional Guide</p>
               </div>
             </div>
             <Button variant="ghost" size="sm" className="lg:hidden" onClick={onClose}>
@@ -104,11 +114,11 @@ export function Sidebar({ activeSection, isOpen, onClose }: SidebarProps) {
           </div>
         </div>
 
-        <nav className="p-4">
-          <div className="space-y-6">
+        <nav className="p-3 lg:p-4">
+          <div className="space-y-4 lg:space-y-6">
             {navigationItems.map((category) => (
               <div key={category.category}>
-                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
+                <h3 className="text-xs lg:text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2 lg:mb-3">
                   {category.category}
                 </h3>
                 <div className="space-y-1">
@@ -119,14 +129,16 @@ export function Sidebar({ activeSection, isOpen, onClose }: SidebarProps) {
                         key={item.id}
                         onClick={() => scrollToSection(item.id)}
                         className={cn(
-                          "w-full flex items-center space-x-3 p-3 rounded-lg transition-colors text-left",
+                          "w-full flex items-center space-x-3 p-2 lg:p-3 rounded-lg transition-colors text-left",
+                          // Improved touch targets for mobile
+                          "min-h-[44px] touch-manipulation",
                           activeSection === item.id
                             ? "bg-blue-600 text-white font-bold shadow-md"
                             : "hover:bg-gray-100 text-gray-700 font-medium",
                         )}
                       >
-                        <Icon className={cn("h-5 w-5", activeSection === item.id ? "text-white" : item.color)} />
-                        <span className="text-sm font-medium">{item.label}</span>
+                        <Icon className={cn("h-4 w-4 lg:h-5 lg:w-5", activeSection === item.id ? "text-white" : item.color)} />
+                        <span className="text-xs lg:text-sm font-medium">{item.label}</span>
                       </button>
                     )
                   })}

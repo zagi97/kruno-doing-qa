@@ -1,7 +1,17 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { Bug, AlertTriangle, CheckCircle, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function BugReportSection() {
+  const [currentDate, setCurrentDate] = useState<string>("");
+
+  // Only set date on client side to avoid hydration mismatch
+  useEffect(() => {
+    setCurrentDate(new Date().toLocaleDateString());
+  }, []);
+
   return (
     <section id="bug-reporting" className="scroll-mt-20">
       <Card className="shadow-lg">
@@ -245,7 +255,7 @@ export function BugReportSection() {
                     Bug Report #BUG-001
                   </h4>
                   <p className="text-blue-100 text-sm">
-                    Created on {new Date().toLocaleDateString()}
+                    Created on {currentDate || "Loading..."}
                   </p>
                 </div>
 
