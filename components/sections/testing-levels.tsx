@@ -1,0 +1,171 @@
+import { Layers, User, Cog, CheckSquare } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+
+export function TestingLevelsSection() {
+  return (
+    <section id="testing-levels" className="scroll-mt-20">
+      <Card className="shadow-lg">
+        <CardContent className="p-8">
+          <div className="flex items-center space-x-4 mb-6">
+            <div className="bg-indigo-100 p-3 rounded-lg">
+              <Layers className="text-2xl text-indigo-600" />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900">Testing Levels</h2>
+              <p className="text-gray-600">Different levels of software testing</p>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            {/* Testing Pyramid Overview */}
+            <div className="bg-indigo-50 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold text-indigo-900 mb-4">Testing Pyramid</h3>
+              <p className="text-gray-700 mb-4">
+                The testing pyramid shows the ideal distribution of different types of tests in a software project. More
+                tests at the bottom (unit tests) and fewer at the top (UI tests).
+              </p>
+
+              <div className="flex justify-center">
+                <div className="relative">
+                  <div className="w-64 h-48 relative">
+                    {/* Pyramid levels */}
+                    <div className="absolute bottom-0 left-8 right-8 h-16 bg-green-200 border-2 border-green-600 flex items-center justify-center">
+                      <span className="font-semibold text-green-800">Unit Tests (70%)</span>
+                    </div>
+                    <div className="absolute bottom-16 left-12 right-12 h-12 bg-blue-200 border-2 border-blue-600 flex items-center justify-center">
+                      <span className="font-semibold text-blue-800">Integration Tests (20%)</span>
+                    </div>
+                    <div className="absolute bottom-28 left-16 right-16 h-10 bg-orange-200 border-2 border-orange-600 flex items-center justify-center">
+                      <span className="font-semibold text-orange-800">System Tests (8%)</span>
+                    </div>
+                    <div className="absolute bottom-38 left-20 right-20 h-8 bg-red-200 border-2 border-red-600 flex items-center justify-center">
+                      <span className="font-semibold text-red-800">UI Tests (2%)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Unit Testing */}
+            <div className="border-l-4 border-green-500 bg-green-50 p-6 rounded-r-lg">
+              <h4 className="text-lg font-semibold text-green-900 mb-3 flex items-center">
+                <Cog className="text-green-600 mr-2 h-5 w-5" />
+                1. Unit Testing
+              </h4>
+              <p className="text-gray-700 mb-4">
+                Testing individual components or modules in isolation. The smallest testable parts of an application.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white p-4 rounded border">
+                  <h5 className="font-semibold text-green-800 mb-3">Login Page Example:</h5>
+                  <div className="space-y-2 text-sm">
+                    <div className="bg-gray-100 p-2 rounded flex items-center">
+                      <div className="w-20 h-6 border border-gray-400 mr-2 bg-white"></div>
+                      <span>Username Field → Unit Test</span>
+                    </div>
+                    <div className="bg-gray-100 p-2 rounded flex items-center">
+                      <div className="w-20 h-6 border border-gray-400 mr-2 bg-white"></div>
+                      <span>Password Field → Unit Test</span>
+                    </div>
+                    <div className="bg-gray-100 p-2 rounded flex items-center">
+                      <div className="w-16 h-6 border border-gray-400 mr-2 bg-blue-200"></div>
+                      <span>Login Button → Unit Test</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white p-4 rounded border">
+                  <h5 className="font-semibold text-green-800 mb-2">Characteristics:</h5>
+                  <ul className="space-y-1 text-sm">
+                    <li>• Tests individual functions/methods</li>
+                    <li>• Fast execution (milliseconds)</li>
+                    <li>• Easy to write and maintain</li>
+                    <li>• High code coverage possible</li>
+                    <li>• Done by developers</li>
+                    <li>• Uses mocks/stubs for dependencies</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Integration Testing */}
+            <div className="border-l-4 border-blue-500 bg-blue-50 p-6 rounded-r-lg">
+              <h4 className="text-lg font-semibold text-blue-900 mb-3 flex items-center">
+                <CheckSquare className="text-blue-600 mr-2 h-5 w-5" />
+                2. Integration Testing
+              </h4>
+              <p className="text-gray-700 mb-4">
+                Testing the interfaces and interaction between integrated components or systems.
+              </p>
+
+              <div className="bg-white p-4 rounded border">
+                <h5 className="font-semibold text-blue-800 mb-3">Integration Example:</h5>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-center">
+                    <div className="bg-green-200 p-2 rounded border">Login Page</div>
+                    <div className="mx-2">→</div>
+                    <div className="bg-blue-200 p-2 rounded border">Database</div>
+                  </div>
+                  <p className="text-sm text-center">Test: Login form communicates with user database</p>
+                </div>
+              </div>
+            </div>
+
+            {/* System Testing */}
+            <div className="border-l-4 border-orange-500 bg-orange-50 p-6 rounded-r-lg">
+              <h4 className="text-lg font-semibold text-orange-900 mb-3 flex items-center">
+                <Layers className="text-orange-600 mr-2 h-5 w-5" />
+                3. System Testing
+              </h4>
+              <p className="text-gray-700 mb-4">
+                Testing the complete integrated system to verify it meets specified requirements.
+              </p>
+
+              <div className="bg-white p-4 rounded border">
+                <h5 className="font-semibold text-orange-800 mb-2">System Test Areas:</h5>
+                <ul className="space-y-1 text-sm">
+                  <li>• Functionality: All features work correctly</li>
+                  <li>• Reliability: System stability over time</li>
+                  <li>• Performance: Speed and responsiveness</li>
+                  <li>• Security: Data protection and access control</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* User Acceptance Testing */}
+            <div className="border-l-4 border-purple-500 bg-purple-50 p-6 rounded-r-lg">
+              <h4 className="text-lg font-semibold text-purple-900 mb-3 flex items-center">
+                <User className="text-purple-600 mr-2 h-5 w-5" />
+                4. User Acceptance Testing (UAT)
+              </h4>
+              <p className="text-gray-700 mb-4">
+                Final testing performed by end users to ensure the system meets business requirements.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white p-4 rounded border">
+                  <h5 className="font-semibold text-purple-800 mb-2">Alpha Testing:</h5>
+                  <ul className="space-y-1 text-sm">
+                    <li>• Performed by internal users/employees</li>
+                    <li>• Controlled environment</li>
+                    <li>• Before beta testing</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white p-4 rounded border">
+                  <h5 className="font-semibold text-purple-800 mb-2">Beta Testing:</h5>
+                  <ul className="space-y-1 text-sm">
+                    <li>• Performed by external users</li>
+                    <li>• Real-world environment</li>
+                    <li>• Limited user group</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </section>
+  )
+}
