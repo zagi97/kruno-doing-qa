@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   X,
@@ -16,14 +16,14 @@ import {
   RotateCcw,
   Flame,
   Bot,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface SidebarProps {
-  activeSection: string
-  isOpen: boolean
-  onClose: () => void
+  activeSection: string;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 const navigationItems = [
@@ -63,26 +63,21 @@ const navigationItems = [
     category: "Automation",
     items: [{ id: "cypress", label: "Cypress Testing", icon: Bot, color: "text-green-600" }],
   },
-]
+];
 
 export function Sidebar({ activeSection, isOpen, onClose }: SidebarProps) {
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    onClose()
-  }
+    onClose();
+  };
 
   return (
     <>
       {/* Mobile overlay - IMPROVED */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" 
-          onClick={onClose}
-        />
-      )}
+      {isOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" onClick={onClose} />}
 
       {/* Sidebar - IMPROVED RESPONSIVE CLASSES */}
       <div
@@ -104,8 +99,8 @@ export function Sidebar({ activeSection, isOpen, onClose }: SidebarProps) {
                 <Book className="text-white text-lg lg:text-xl" />
               </div>
               <div>
-                <h2 className="text-lg lg:text-xl font-bold text-gray-900">QA Testing Bootcamp</h2>
-                <p className="text-xs lg:text-sm text-gray-600">Complete Professional Guide</p>
+                <h2 className="text-lg lg:text-xl font-bold text-gray-900">QA Handbook</h2>
+                <p className="text-xs lg:text-sm text-gray-600">Everything You Need to Know</p>
               </div>
             </div>
             <Button variant="ghost" size="sm" className="lg:hidden" onClick={onClose}>
@@ -123,7 +118,7 @@ export function Sidebar({ activeSection, isOpen, onClose }: SidebarProps) {
                 </h3>
                 <div className="space-y-1">
                   {category.items.map((item) => {
-                    const Icon = item.icon
+                    const Icon = item.icon;
                     return (
                       <button
                         key={item.id}
@@ -134,13 +129,15 @@ export function Sidebar({ activeSection, isOpen, onClose }: SidebarProps) {
                           "min-h-[44px] touch-manipulation",
                           activeSection === item.id
                             ? "bg-blue-600 text-white font-bold shadow-md"
-                            : "hover:bg-gray-100 text-gray-700 font-medium",
+                            : "hover:bg-gray-100 text-gray-700 font-medium"
                         )}
                       >
-                        <Icon className={cn("h-4 w-4 lg:h-5 lg:w-5", activeSection === item.id ? "text-white" : item.color)} />
+                        <Icon
+                          className={cn("h-4 w-4 lg:h-5 lg:w-5", activeSection === item.id ? "text-white" : item.color)}
+                        />
                         <span className="text-xs lg:text-sm font-medium">{item.label}</span>
                       </button>
-                    )
+                    );
                   })}
                 </div>
               </div>
@@ -149,5 +146,5 @@ export function Sidebar({ activeSection, isOpen, onClose }: SidebarProps) {
         </nav>
       </div>
     </>
-  )
+  );
 }

@@ -6,9 +6,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "KrunoDoingQA - Software Testing Bootcamp",
+  title: "QA Testing Handbook - Everything You Need to Know",
   description:
-    "Complete professional guide to QA testing, covering everything from basics to advanced automation with Cypress.",
+    "Complete guide to QA testing fundamentals, methodologies, and best practices for aspiring and current QA professionals.",
 };
 
 // Move viewport to separate export (Next.js 15+ recommendation)

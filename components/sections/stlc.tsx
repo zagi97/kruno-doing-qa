@@ -1,5 +1,6 @@
-import { CheckCircle } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { CheckCircle } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 const stlcPhases = [
   {
@@ -62,24 +63,19 @@ const stlcPhases = [
     activities: ["Document lessons learned", "Archive test artifacts", "Analyze process improvements"],
     deliverables: ["Test closure report", "Best practices document", "Test artifacts archive"],
   },
-]
+];
 
 export function StlcSection() {
   return (
     <section id="stlc" className="scroll-mt-20">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg overflow-hidden">
+        <SectionHeader
+          title="STLC - Software Testing Life Cycle"
+          subtitle="Systematic approach to testing"
+          icon={CheckCircle}
+        />
         <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-green-100 p-3 rounded-lg">
-              <CheckCircle className="text-2xl text-green-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">STLC - Software Testing Life Cycle</h2>
-              <p className="text-gray-600">Systematic approach to testing</p>
-            </div>
-          </div>
-
-          <div className="space-y-4">
+          <div className="space-y-4 ">
             {stlcPhases.map((phase) => (
               <div key={phase.phase} className={`border-l-4 p-6 rounded-r-lg ${phase.color}`}>
                 <div className="flex items-start space-x-4">
@@ -115,5 +111,5 @@ export function StlcSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

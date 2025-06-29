@@ -1,5 +1,6 @@
-import { Lightbulb } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Lightbulb } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 const principles = [
   {
@@ -42,23 +43,21 @@ const principles = [
       "Finding and fixing defects does not help if the system built is unusable and does not fulfill user needs.",
     color: "border-gray-500 bg-gray-50 text-gray-900",
   },
-]
+];
 
 export function PrinciplesSection() {
   return (
     <section id="principles" className="scroll-mt-20">
-      <Card className="shadow-lg">
-        <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-yellow-100 p-3 rounded-lg">
-              <Lightbulb className="text-2xl text-yellow-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">7 Testing Principles</h2>
-              <p className="text-gray-600">Fundamental concepts every QA should know</p>
-            </div>
-          </div>
+      <Card className="shadow-lg overflow-hidden">
+        {/* REUSABLE SECTION HEADER */}
+        <SectionHeader
+          title="7 Testing Principles"
+          subtitle="Fundamental concepts every QA should know"
+          icon={Lightbulb}
+        />
 
+        {/* CONTENT */}
+        <CardContent className="p-8">
           <div className="grid md:grid-cols-2 gap-6">
             {principles.map((principle, index) => (
               <div key={index} className={`border-l-4 p-4 rounded-r-lg ${principle.color}`}>
@@ -70,5 +69,5 @@ export function PrinciplesSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

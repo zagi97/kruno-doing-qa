@@ -1,21 +1,13 @@
-import { CogIcon as Cogs, Atom, Link, Monitor, UserCheck } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { CogIcon as Cogs, Atom, Link, Monitor, UserCheck } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 export function FunctionalSection() {
   return (
     <section id="functional" className="scroll-mt-20">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg overflow-hidden">
+        <SectionHeader title="Functional Testing" subtitle="Testing what the system does" icon={Cogs} />
         <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-green-100 p-3 rounded-lg">
-              <Cogs className="text-2xl text-green-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Functional Testing</h2>
-              <p className="text-gray-600">Testing what the system does</p>
-            </div>
-          </div>
-
           <div className="space-y-8">
             {/* Overview */}
             <div className="bg-green-50 p-6 rounded-lg">
@@ -245,5 +237,5 @@ export function FunctionalSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

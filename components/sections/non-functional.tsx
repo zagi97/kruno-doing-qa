@@ -1,21 +1,13 @@
-import { BarChart, Users, AlertTriangle, Database, Zap, Shield, UserCheck, RotateCcw, Clock } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { BarChart, Users, AlertTriangle, Database, Zap, Shield, UserCheck, RotateCcw, Clock } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 export function NonFunctionalSection() {
   return (
     <section id="non-functional" className="scroll-mt-20">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg overflow-hidden">
+        <SectionHeader title="Non-Functional Testing" subtitle="Testing how the system performs" icon={BarChart} />
         <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-red-100 p-3 rounded-lg">
-              <BarChart className="text-2xl text-red-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Non-Functional Testing</h2>
-              <p className="text-gray-600">Testing how the system performs</p>
-            </div>
-          </div>
-
           <div className="space-y-8">
             {/* Overview */}
             <div className="bg-red-50 p-6 rounded-lg">
@@ -313,5 +305,5 @@ export function NonFunctionalSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

@@ -1,21 +1,17 @@
-import { RotateCcw, RefreshCw, AlertCircle } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { RotateCcw, RefreshCw, AlertCircle } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 export function RegressionTestingSection() {
   return (
     <section id="regression-testing" className="scroll-mt-20">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg overflow-hidden">
+        <SectionHeader
+          title="Regression Testing"
+          subtitle="Ensuring new changes don't break existing functionality"
+          icon={RotateCcw}
+        />
         <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-purple-100 p-3 rounded-lg">
-              <RotateCcw className="text-2xl text-purple-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Regression Testing</h2>
-              <p className="text-gray-600">Ensuring new changes don't break existing functionality</p>
-            </div>
-          </div>
-
           <div className="space-y-8">
             {/* What is Regression Testing */}
             <div className="bg-purple-50 p-6 rounded-lg">
@@ -298,5 +294,5 @@ export function RegressionTestingSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

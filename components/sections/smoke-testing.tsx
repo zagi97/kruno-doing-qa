@@ -1,21 +1,13 @@
-import { Flame, CheckCircle, AlertTriangle } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Flame, CheckCircle, AlertTriangle } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 export function SmokeTestingSection() {
   return (
     <section id="smoke-testing" className="scroll-mt-20">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg overflow-hidden">
+        <SectionHeader title="Smoke Testing" subtitle="Basic functionality verification" icon={Flame} />
         <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-orange-100 p-3 rounded-lg">
-              <Flame className="text-2xl text-orange-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Smoke Testing</h2>
-              <p className="text-gray-600">Basic functionality verification</p>
-            </div>
-          </div>
-
           <div className="space-y-8">
             {/* What is Smoke Testing */}
             <div className="bg-orange-50 p-6 rounded-lg">
@@ -312,5 +304,5 @@ export function SmokeTestingSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

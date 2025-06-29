@@ -1,21 +1,17 @@
-import { Hand, Bot } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Hand, Bot } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 export function ManualAutomationSection() {
   return (
     <section id="manual-automation" className="scroll-mt-20">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg overflow-hidden">
+        <SectionHeader
+          title="Manual vs Automation Testing"
+          subtitle="Choosing the right approach for different scenarios"
+          icon={Hand}
+        />
         <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-blue-100 p-3 rounded-lg">
-              <Hand className="text-2xl text-blue-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Manual vs Automation Testing</h2>
-              <p className="text-gray-600">Choosing the right approach for different scenarios</p>
-            </div>
-          </div>
-
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Manual Testing */}
             <div className="bg-blue-50 p-6 rounded-lg">
@@ -141,5 +137,5 @@ export function ManualAutomationSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

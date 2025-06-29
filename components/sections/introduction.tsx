@@ -1,21 +1,16 @@
-import { Book, Search, Check, User, Shield } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Book, Search, Check, User, Shield } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 export function IntroductionSection() {
   return (
     <section id="introduction" className="scroll-mt-20">
-      <Card className="shadow-lg">
-        <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-blue-100 p-3 rounded-lg">
-              <Book className="text-2xl text-blue-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">What is QA Testing?</h2>
-              <p className="text-gray-600">Foundation of Quality Assurance</p>
-            </div>
-          </div>
+      <Card className="shadow-lg overflow-hidden">
+        {/* REUSABLE SECTION HEADER */}
+        <SectionHeader title="What is QA Testing?" subtitle="Foundation of Quality Assurance" icon={Book} />
 
+        {/* CONTENT */}
+        <CardContent className="p-8">
           <div className="prose max-w-none">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               Quality Assurance (QA) Testing is the systematic process of ensuring software applications meet specified
@@ -74,5 +69,5 @@ export function IntroductionSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

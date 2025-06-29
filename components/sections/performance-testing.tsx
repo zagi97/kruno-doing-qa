@@ -1,21 +1,17 @@
-import { BarChart, TrendingUp, Users } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { BarChart, TrendingUp, Users } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 export function PerformanceTestingSection() {
   return (
     <section id="performance-testing" className="scroll-mt-20">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg overflow-hidden">
+        <SectionHeader
+          title="Performance Testing"
+          subtitle="Comprehensive performance testing strategies"
+          icon={BarChart}
+        />
         <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-yellow-100 p-3 rounded-lg">
-              <BarChart className="text-2xl text-yellow-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Performance Testing</h2>
-              <p className="text-gray-600">Comprehensive performance testing strategies</p>
-            </div>
-          </div>
-
           <div className="space-y-8">
             {/* Load Testing */}
             <div className="border-l-4 border-green-500 bg-green-50 p-6 rounded-r-lg">
@@ -126,5 +122,5 @@ export function PerformanceTestingSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

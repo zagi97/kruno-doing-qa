@@ -1,21 +1,17 @@
-import { CuboidIcon as Cube, Code, RotateCcw } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { CuboidIcon as Cube, Code, RotateCcw } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 export function BlackWhiteBoxSection() {
   return (
     <section id="blackbox-whitebox" className="scroll-mt-20">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg overflow-hidden">
+        <SectionHeader
+          title="Black Box vs White Box Testing"
+          subtitle="Testing approaches based on code knowledge"
+          icon={Cube}
+        />
         <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <Cube className="text-2xl text-gray-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Black Box vs White Box Testing</h2>
-              <p className="text-gray-600">Testing approaches based on code knowledge</p>
-            </div>
-          </div>
-
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Black Box Testing */}
             <div className="bg-gray-900 text-white p-6 rounded-lg">
@@ -181,5 +177,5 @@ export function BlackWhiteBoxSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

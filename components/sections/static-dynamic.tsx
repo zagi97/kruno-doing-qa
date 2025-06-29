@@ -1,21 +1,13 @@
-import { Play, Eye } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Play, Eye } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 export function StaticDynamicSection() {
   return (
     <section id="static-dynamic" className="scroll-mt-20">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg overflow-hidden">
+        <SectionHeader title="Static vs Dynamic Testing" subtitle="Two fundamental approaches to testing" icon={Play} />
         <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-orange-100 p-3 rounded-lg">
-              <Play className="text-2xl text-orange-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Static vs Dynamic Testing</h2>
-              <p className="text-gray-600">Two fundamental approaches to testing</p>
-            </div>
-          </div>
-
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Static Testing */}
             <div className="bg-blue-50 p-6 rounded-lg">
@@ -156,5 +148,5 @@ export function StaticDynamicSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

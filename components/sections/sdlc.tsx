@@ -1,5 +1,6 @@
-import { Layers, ArrowRight } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Layers, ArrowRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 const waterfallSteps = [
   { step: 1, title: "Requirements", description: "Gather and analyze business requirements", color: "bg-blue-500" },
@@ -8,30 +9,28 @@ const waterfallSteps = [
   { step: 4, title: "Testing", description: "QA validation and verification", color: "bg-red-500" },
   { step: 5, title: "Deployment", description: "Release to production", color: "bg-purple-500" },
   { step: 6, title: "Maintenance", description: "Ongoing support and updates", color: "bg-gray-500" },
-]
+];
 
 const vModelPairs = [
   { left: "Requirements", right: "User Acceptance Test" },
   { left: "System Design", right: "System Testing" },
   { left: "Detailed Design", right: "Integration Testing" },
   { left: "Coding", right: "Unit Testing" },
-]
+];
 
 export function SdlcSection() {
   return (
     <section id="sdlc" className="scroll-mt-20">
-      <Card className="shadow-lg">
-        <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-purple-100 p-3 rounded-lg">
-              <Layers className="text-2xl text-purple-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">SDLC - Software Development Life Cycle</h2>
-              <p className="text-gray-600">Understanding development methodologies</p>
-            </div>
-          </div>
+      <Card className="shadow-lg overflow-hidden">
+        {/* REUSABLE SECTION HEADER */}
+        <SectionHeader
+          title="SDLC - Software Development Life Cycle"
+          subtitle="Understanding development methodologies"
+          icon={Layers}
+        />
 
+        {/* CONTENT */}
+        <CardContent className="p-8">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Waterfall Model */}
             <div className="bg-gray-50 p-6 rounded-lg">
@@ -116,5 +115,5 @@ export function SdlcSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }

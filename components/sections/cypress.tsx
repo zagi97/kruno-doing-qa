@@ -1,21 +1,17 @@
-import { Bot, Code, FileText, Play, CheckCircle, ExternalLink, Monitor, Zap } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Bot, Code, FileText, Play, CheckCircle, ExternalLink, Monitor, Zap } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeader } from "@/components/header-section";
 
 export function CypressSection() {
   return (
     <section id="cypress" className="scroll-mt-20">
-      <Card className="shadow-lg">
+      <Card className="shadow-lg overflow-hidden">
+        <SectionHeader
+          title="Cypress Automation Testing"
+          subtitle="Modern end-to-end testing framework for web applications"
+          icon={Bot}
+        />
         <CardContent className="p-8">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-green-100 p-3 rounded-lg">
-              <Bot className="text-2xl text-green-600" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Cypress Automation Testing</h2>
-              <p className="text-gray-600">Modern end-to-end testing framework for web applications</p>
-            </div>
-          </div>
-
           <div className="space-y-8">
             {/* Cypress Overview */}
             <div className="bg-green-50 p-6 rounded-lg">
@@ -280,5 +276,5 @@ export function CypressSection() {
         </CardContent>
       </Card>
     </section>
-  )
+  );
 }
