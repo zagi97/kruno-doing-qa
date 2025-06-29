@@ -131,11 +131,13 @@ export function BugReportSection() {
                       <span className="text-xs">Feature not working</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium">Minor</span>
+                      <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium">
+                        Medium
+                      </span>
                       <span className="text-xs">UI issues, typos</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">Trivial</span>
+                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">Low</span>
                       <span className="text-xs">Cosmetic issues</span>
                     </div>
                   </div>
@@ -173,7 +175,7 @@ export function BugReportSection() {
                 <h5 className="font-semibold text-yellow-800 mb-2">Example Scenarios:</h5>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div className="bg-red-50 p-3 rounded">
-                    <strong>High Priority + High Severity:</strong> Payment system crashes during checkout
+                    <strong>High Priority + Critical Severity:</strong> Payment system crashes during checkout
                   </div>
                   <div className="bg-orange-50 p-3 rounded">
                     <strong>High Priority + Low Severity:</strong> Company logo missing on homepage before product
