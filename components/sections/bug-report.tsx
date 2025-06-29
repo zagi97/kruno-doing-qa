@@ -182,7 +182,7 @@ export function BugReportSection() {
                     launch
                   </div>
                   <div className="bg-yellow-50 p-3 rounded">
-                    <strong>Low Priority + High Severity:</strong> Admin panel crashes (affects few users)
+                    <strong>Low Priority + Critical Severity:</strong> Admin panel crashes (affects few users)
                   </div>
                   <div className="bg-blue-50 p-3 rounded">
                     <strong>Low Priority + Low Severity:</strong> Text alignment issue in footer
