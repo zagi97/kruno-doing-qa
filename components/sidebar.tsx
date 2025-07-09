@@ -8,14 +8,18 @@ import {
   CheckCircle,
   Play,
   Hand,
-  CuboidIcon as Cube,
-  CogIcon as Cogs,
+  Box,
+  Cog,
   BarChart,
   Bug,
   FileText,
   RotateCcw,
   Flame,
   Bot,
+  Server,
+  Smartphone,
+  Settings,
+  Kanban,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -43,11 +47,13 @@ const navigationItems = [
     items: [
       { id: "static-dynamic", label: "Static vs Dynamic", icon: Play, color: "text-orange-600" },
       { id: "manual-automation", label: "Manual vs Automation", icon: Hand, color: "text-blue-600" },
-      { id: "functional", label: "Functional Testing", icon: Cogs, color: "text-green-600" },
-      { id: "testing-techniques", label: "Testing Techniques", icon: Cogs, color: "text-pink-600" },
+      { id: "functional", label: "Functional Testing", icon: Cog, color: "text-green-600" },
+      { id: "testing-techniques", label: "Testing Techniques", icon: Cog, color: "text-pink-600" },
       { id: "performance-testing", label: "Performance Testing", icon: BarChart, color: "text-yellow-600" },
       { id: "non-functional", label: "Non-Functional Testing", icon: BarChart, color: "text-red-600" },
-      { id: "blackbox-whitebox", label: "Black Box vs White Box", icon: Cube, color: "text-gray-600" },
+      { id: "api-testing", label: "API Testing", icon: Server, color: "text-blue-600" },
+      { id: "mobile-testing", label: "Mobile Testing", icon: Smartphone, color: "text-green-600" },
+      { id: "blackbox-whitebox", label: "Black Box vs White Box", icon: Box, color: "text-gray-600" },
     ],
   },
   {
@@ -60,8 +66,12 @@ const navigationItems = [
     ],
   },
   {
-    category: "Automation",
-    items: [{ id: "cypress", label: "Cypress Testing", icon: Bot, color: "text-green-600" }],
+    category: "Tools",
+    items: [
+      { id: "cypress", label: "Cypress Testing", icon: Bot, color: "text-green-600" },
+      { id: "jmeter", label: "JMeter", icon: Settings, color: "text-orange-600" },
+      { id: "test-management-tools", label: "Test Management Tools", icon: Kanban, color: "text-purple-600" },
+    ],
   },
 ];
 

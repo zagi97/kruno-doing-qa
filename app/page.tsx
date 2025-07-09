@@ -21,6 +21,10 @@ import { VModelSection } from "@/components/sections/v-model";
 import { TestingTechniquesSection } from "@/components/sections/testing-techniques";
 import { PerformanceTestingSection } from "@/components/sections/performance-testing";
 import { CypressSection } from "@/components/sections/cypress";
+import { ApiTestingSection } from "@/components/sections/api-testing";
+import { MobileTestingSection } from "@/components/sections/mobile-testing";
+import { TestManagementToolsSection } from "@/components/sections/test-management-tools";
+import { JMeterSection } from "@/components/sections/jmeter";
 
 export default function QATestingBlog() {
   const [activeSection, setActiveSection] = useState("introduction");
@@ -41,12 +45,16 @@ export default function QATestingBlog() {
         "testing-techniques",
         "performance-testing",
         "non-functional",
+        "api-testing",
+        "mobile-testing",
         "blackbox-whitebox",
         "bug-reporting",
         "test-cases",
         "regression-testing",
         "smoke-testing",
         "cypress",
+        "jmeter",
+        "test-management-tools",
       ];
 
       const scrollPosition = window.scrollY + 100;
@@ -55,10 +63,7 @@ export default function QATestingBlog() {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
             break;
           }
@@ -72,11 +77,7 @@ export default function QATestingBlog() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      <Sidebar
-        activeSection={activeSection}
-        isOpen={sidebarOpen}
-        onClose={() => setSidebarOpen(false)}
-      />
+      <Sidebar activeSection={activeSection} isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       {/* IMPROVED MAIN CONTENT CONTAINER */}
       <div className="flex-1 w-full lg:ml-80">
@@ -97,12 +98,16 @@ export default function QATestingBlog() {
           <TestingTechniquesSection />
           <PerformanceTestingSection />
           <NonFunctionalSection />
+          <ApiTestingSection />
+          <MobileTestingSection />
           <BlackWhiteBoxSection />
           <BugReportSection />
           <TestCaseSection />
           <RegressionTestingSection />
           <SmokeTestingSection />
           <CypressSection />
+          <JMeterSection />
+          <TestManagementToolsSection />
         </main>
       </div>
     </div>
