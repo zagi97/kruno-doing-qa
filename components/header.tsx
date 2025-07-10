@@ -18,7 +18,7 @@ export function Header({ onMenuClick }: HeaderProps) {
           </Button>
           {/* RESPONSIVE TITLE */}
           <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
-            <span className="hidden sm:inline">QA Testing Handbooke</span>
+            <span className="hidden sm:inline">QA Testing Handbook</span>
             <span className="sm:hidden">QA Handbook</span>
           </h1>
         </div>
