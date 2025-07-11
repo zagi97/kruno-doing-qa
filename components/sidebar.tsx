@@ -20,6 +20,7 @@ import {
   Smartphone,
   Settings,
   Kanban,
+  Monitor,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -51,6 +52,7 @@ const navigationItems = [
       { id: "testing-techniques", label: "Testing Techniques", icon: Cog, color: "text-pink-600" },
       { id: "performance-testing", label: "Performance Testing", icon: BarChart, color: "text-yellow-600" },
       { id: "non-functional", label: "Non-Functional Testing", icon: BarChart, color: "text-red-600" },
+      { id: "devtools-testing", label: "DevTools Testing", icon: Monitor, color: "text-gray-600" },
       { id: "api-testing", label: "API Testing", icon: Server, color: "text-blue-600" },
       { id: "mobile-testing", label: "Mobile Testing", icon: Smartphone, color: "text-green-600" },
       { id: "blackbox-whitebox", label: "Black Box vs White Box", icon: Box, color: "text-gray-600" },

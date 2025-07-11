@@ -25,6 +25,7 @@ import { ApiTestingSection } from "@/components/sections/api-testing";
 import { MobileTestingSection } from "@/components/sections/mobile-testing";
 import { TestManagementToolsSection } from "@/components/sections/test-management-tools";
 import { JMeterSection } from "@/components/sections/jmeter";
+import { DevToolsTestingSection } from "@/components/sections/devtools-testing";
 
 export default function QATestingBlog() {
   const [activeSection, setActiveSection] = useState("introduction");
@@ -45,6 +46,7 @@ export default function QATestingBlog() {
         "testing-techniques",
         "performance-testing",
         "non-functional",
+        "devtools-testing",
         "api-testing",
         "mobile-testing",
         "blackbox-whitebox",
@@ -98,6 +100,7 @@ export default function QATestingBlog() {
           <TestingTechniquesSection />
           <PerformanceTestingSection />
           <NonFunctionalSection />
+          <DevToolsTestingSection />
           <ApiTestingSection />
           <MobileTestingSection />
           <BlackWhiteBoxSection />
