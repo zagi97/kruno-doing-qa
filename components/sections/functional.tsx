@@ -1,4 +1,4 @@
-import { CogIcon as Cogs, Atom, Link, Monitor, UserCheck } from "lucide-react";
+import { CogIcon as Cogs, Atom, Link, Monitor, UserCheck, User, MessageSquare } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -75,6 +75,18 @@ export function FunctionalSection() {
                     </div>
                   </div>
                 </div>
+
+                {/* My Unit Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-blue-600 mr-1" />
+                    <span className="text-xs font-semibold text-blue-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    Developers handle unit testing with Java code on my project. I focus on higher-level functional
+                    testing of complete features and user workflows.
+                  </p>
+                </div>
               </div>
 
               {/* Integration Testing */}
@@ -103,6 +115,19 @@ export function FunctionalSection() {
                       Shopping Cart, etc.
                     </div>
                   </div>
+                </div>
+
+                {/* My Integration Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-green-600 mr-1" />
+                    <span className="text-xs font-semibold text-green-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I test integration by adding new users via Swagger/Bruno API and then checking if they show up
+                    correctly in the UI and database. I focus on testing how frontend, backend, and database components
+                    work together effectively.
+                  </p>
                 </div>
               </div>
 
@@ -145,6 +170,19 @@ export function FunctionalSection() {
                     </div>
                   </div>
                 </div>
+
+                {/* My System Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-purple-600 mr-1" />
+                    <span className="text-xs font-semibold text-purple-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I test complete workflows like: Login → Create case → Change status on cases → Logout. This tests
+                    the entire system end-to-end to ensure all components work together properly for real user
+                    scenarios.
+                  </p>
+                </div>
               </div>
 
               {/* Acceptance Testing */}
@@ -176,6 +214,79 @@ export function FunctionalSection() {
                     </div>
                   </div>
                 </div>
+
+                {/* My UAT Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-orange-600 mr-1" />
+                    <span className="text-xs font-semibold text-orange-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I don't directly prepare UAT scenarios - stakeholders handle UAT. However, I participate in Jira
+                    comments where the main conversation about user stories happens, which helps inform UAT
+                    requirements.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* My Functional Testing Focus */}
+            <div className="mt-8 bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+              <h3 className="text-lg font-semibold text-blue-900 mb-3 flex items-center">
+                <MessageSquare className="mr-2 h-5 w-5" />
+                My Functional Testing Focus Areas
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-blue-800 mb-2">Primary Testing Areas:</h4>
+                  <ol className="space-y-1 text-sm list-decimal list-inside">
+                    <li>
+                      <strong>UI Functionality:</strong> Testing interface elements and user interactions
+                    </li>
+                    <li>
+                      <strong>Business Logic:</strong> Validating rules, calculations, and workflows
+                    </li>
+                    <li>
+                      <strong>End-to-End Workflows:</strong> Complete user scenarios from start to finish
+                    </li>
+                  </ol>
+                </div>
+
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-blue-800 mb-2">My Current Workflow:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>
+                      • <strong>Login</strong> → User authentication
+                    </li>
+                    <li>
+                      • <strong>Create case</strong> → Business process creation
+                    </li>
+                    <li>
+                      • <strong>Change status on cases</strong> → Status management
+                    </li>
+                    <li>
+                      • <strong>Logout</strong> → Session termination
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <h4 className="font-semibold text-blue-800 mb-2">Real Functional Bug Example:</h4>
+                <p className="text-sm text-gray-700">
+                  <strong>Role-based access issue:</strong> When I clicked on the "Report" page with certain user roles,
+                  nothing happened - the page didn't open. This was a functional bug where the role permissions weren't
+                  properly implemented in the UI logic.
+                </p>
+              </div>
+
+              <div className="mt-4 bg-blue-100 p-3 rounded">
+                <p className="text-sm">
+                  <strong>My Approach:</strong> I focus heavily on functional testing since this is where most
+                  user-facing issues occur. I test both individual features and complete business workflows to ensure
+                  everything works as expected from a user perspective.
+                </p>
               </div>
             </div>
 

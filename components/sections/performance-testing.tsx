@@ -1,4 +1,4 @@
-import { BarChart, TrendingUp, Users } from "lucide-react";
+import { BarChart, TrendingUp, Users, User, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -38,6 +38,19 @@ export function PerformanceTestingSection() {
                   </div>
                 </div>
               </div>
+
+              {/* My Load Testing Experience */}
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-green-600 mr-1" />
+                  <span className="text-xs font-semibold text-green-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  I learned load testing with JMeter during company training, running basic tests on sample pages and
+                  APIs. I tested various load scenarios but haven't yet applied this to real project environments -
+                  mainly educational practice.
+                </p>
+              </div>
             </div>
 
             {/* Stress Testing */}
@@ -67,6 +80,19 @@ export function PerformanceTestingSection() {
                   </div>
                 </div>
               </div>
+
+              {/* My Stress Testing Experience */}
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-red-600 mr-1" />
+                  <span className="text-xs font-semibold text-red-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  I practiced stress testing scenarios with JMeter during training, incrementally increasing load to
+                  find breaking points. Used this for learning purposes on test pages, but not yet on production
+                  applications.
+                </p>
+              </div>
             </div>
 
             {/* Volume Testing */}
@@ -82,6 +108,19 @@ export function PerformanceTestingSection() {
                   <li>• Memory usage with large datasets</li>
                   <li>• Network bandwidth utilization</li>
                 </ul>
+              </div>
+
+              {/* My Volume Testing Experience */}
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-blue-600 mr-1" />
+                  <span className="text-xs font-semibold text-blue-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  I learned volume testing concepts with JMeter, testing with large datasets and multiple records during
+                  training exercises. This was part of my JMeter learning process using sample data rather than real
+                  project data.
+                </p>
               </div>
             </div>
 
@@ -116,6 +155,69 @@ export function PerformanceTestingSection() {
                     <li>• System Availability: 99.9%</li>
                   </ul>
                 </div>
+              </div>
+            </div>
+
+            {/* My Current Performance Testing Approach */}
+            <div className="mt-8 bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+              <h3 className="text-lg font-semibold text-orange-900 mb-3 flex items-center">
+                <Clock className="mr-2 h-5 w-5" />
+                My Current Performance Testing Approach
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-orange-800 mb-2">JMeter Learning Experience:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>
+                      • <strong>Training completed:</strong> Load, stress, volume, spike testing
+                    </li>
+                    <li>
+                      • <strong>Practice environment:</strong> Sample pages and test APIs
+                    </li>
+                    <li>
+                      • <strong>All test types covered:</strong> Comprehensive JMeter learning
+                    </li>
+                    <li>
+                      • <strong>Challenges faced:</strong> Old-looking UI, documentation complexity
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-orange-800 mb-2">Daily Performance Awareness:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>
+                      • <strong>Manual testing:</strong> Notice slow-loading pages during functional testing
+                    </li>
+                    <li>
+                      • <strong>API testing:</strong> Monitor response times in Bruno/Postman
+                    </li>
+                    <li>
+                      • <strong>Browser DevTools:</strong> Check network timing for requests
+                    </li>
+                    <li>
+                      • <strong>User experience focus:</strong> Report performance issues affecting users
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <h4 className="font-semibold text-orange-800 mb-2">Next Steps:</h4>
+                <p className="text-sm text-gray-700">
+                  While I have solid JMeter knowledge from training, I'm ready to apply performance testing skills to
+                  real project scenarios. My current focus is functional testing, but I'm prepared to implement formal
+                  performance testing when project needs arise.
+                </p>
+              </div>
+
+              <div className="mt-4 bg-orange-100 p-3 rounded">
+                <p className="text-sm">
+                  <strong>Current Status:</strong> JMeter-trained and ready to implement performance testing on actual
+                  projects. I understand the concepts and have hands-on practice, but await opportunities to apply this
+                  knowledge in production environments.
+                </p>
               </div>
             </div>
           </div>

@@ -1,4 +1,16 @@
-import { Server, Code, CheckCircle, XCircle, Shield, Zap, AlertCircle, ArrowRight } from "lucide-react";
+import {
+  Server,
+  Code,
+  CheckCircle,
+  XCircle,
+  Shield,
+  Zap,
+  AlertCircle,
+  ArrowRight,
+  User,
+  Settings,
+  Play,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -116,141 +128,67 @@ const bestPractices = {
   ],
 };
 
-const crudExamples = [
+const myBrunoExamples = [
   {
-    operation: "CREATE",
+    operation: "CREATE TENANT",
     method: "POST",
-    endpoint: "{{baseUrl}}/users",
+    endpoint: "{{baseUrl}}/tenant/create",
+    realExample: true,
     requestBody: {
-      name: "John Doe",
-      email: "john@example.com",
-      role: "user",
+      basicInfo: {
+        name: "Create Tenant with Bruno",
+        shortName: "F22",
+        color: "#3EB43E",
+        note: "",
+        domain: "B341",
+        typeId: 1,
+        sector: "COMMUNICATIONS_INFORMATION_TECHNOLOGY",
+      },
+      projectService: {
+        responseHours: 5,
+        flashAlertReminderNo: 3,
+        contractStart: null,
+        contractEnd: null,
+        serviceActivationDate: "2025-05-26T11:16:44.987Z",
+      },
     },
-    headers: ["Content-Type: application/json", "Authorization: Bearer {{token}}"],
     validations: [
-      "Status: 201 Created",
-      "Response contains user ID",
-      "Email format validation",
-      "Required fields validation",
-      "Password complexity check",
+      "Status code is 200",
+      "Domain uniqueness validation",
+      "Response contains tenant ID",
+      "Body success and response validation",
+      "Environment variable updates",
     ],
     color: "border-green-500",
   },
-  {
-    operation: "READ",
-    method: "GET",
-    endpoint: "{{baseUrl}}/users/123",
-    requestBody: null,
-    headers: ["Authorization: Bearer {{token}}"],
-    validations: [
-      "Status: 200 OK",
-      "User data structure matches schema",
-      "Data accuracy and completeness",
-      "Response time < 200ms",
-      "Proper error handling for invalid ID",
-    ],
-    color: "border-blue-500",
-  },
-  {
-    operation: "UPDATE",
-    method: "PUT",
-    endpoint: "{{baseUrl}}/users/123",
-    requestBody: {
-      name: "John Smith",
-      email: "johnsmith@example.com",
-    },
-    headers: ["Content-Type: application/json", "Authorization: Bearer {{token}}"],
-    validations: [
-      "Status: 200 OK",
-      "Updated data returned in response",
-      "Partial update handling",
-      "Validation error responses",
-      "Optimistic locking check",
-    ],
-    color: "border-yellow-500",
-  },
-  {
-    operation: "DELETE",
-    method: "DELETE",
-    endpoint: "{{baseUrl}}/users/123",
-    requestBody: null,
-    headers: ["Authorization: Bearer {{token}}"],
-    validations: [
-      "Status: 204 No Content",
-      "User actually deleted from database",
-      "Cascade deletion behavior",
-      "Authorization check for deletion rights",
-      "Soft delete vs hard delete behavior",
-    ],
-    color: "border-red-500",
-  },
 ];
 
-const authenticationScenarios = [
-  {
-    title: "Login Authentication",
-    endpoint: "POST {{baseUrl}}/auth/login",
-    testCases: [
-      "Valid credentials → 200 OK with token",
-      "Invalid password → 401 Unauthorized",
-      "Non-existent user → 401 Unauthorized",
-      "Empty credentials → 400 Bad Request",
-      "Account locked → 423 Locked",
-      "Password expired → 422 Unprocessable Entity",
-    ],
-  },
-  {
-    title: "Token Validation",
-    endpoint: "GET {{baseUrl}}/protected-resource",
-    testCases: [
-      "Valid token → 200 OK with data",
-      "Invalid token → 401 Unauthorized",
-      "Expired token → 401 Unauthorized",
-      "Missing token → 401 Unauthorized",
-      "Malformed token → 400 Bad Request",
-      "Token with insufficient permissions → 403 Forbidden",
-    ],
-  },
-];
-
-const realWorldExample = {
-  title: "E-commerce Product Management API",
-  description: "Complete workflow testing for an online store product system",
-  workflows: [
+const myTestingApproach = {
+  workflow: [
     {
-      step: "1. Admin creates product",
-      method: "POST",
-      endpoint: "/products",
-      auth: "Admin token required",
-      validations: ["Product ID generated", "Inventory initialized", "SEO fields populated"],
+      step: "1. Developer creates new endpoint",
+      action: "Wait for endpoint to be ready",
+      frequency: "Rarely - only when new endpoints are created",
     },
     {
-      step: "2. Customer searches products",
-      method: "GET",
-      endpoint: "/products?category=electronics&price_max=1000",
-      auth: "Public or user token",
-      validations: ["Pagination working", "Filtering accurate", "Response time < 500ms"],
+      step: "2. Write Bruno test collection",
+      action: "Create new API test in Bruno",
+      frequency: "Really rarely - when devs write new endpoint",
     },
     {
-      step: "3. Customer adds to cart",
-      method: "POST",
-      endpoint: "/cart/items",
-      auth: "User token required",
-      validations: ["Cart updated", "Stock checked", "Price calculated"],
+      step: "3. Test CRUD operations",
+      action: "Test Create, Read, Update, Delete operations",
+      frequency: "When applicable to the endpoint",
     },
     {
-      step: "4. Process payment",
-      method: "POST",
-      endpoint: "/orders",
-      auth: "User token required",
-      validations: ["Stock decremented", "Payment processed", "Order confirmation sent"],
+      step: "4. Validate responses",
+      action: "Check status codes, response structure, business logic",
+      frequency: "Always in every test",
     },
     {
-      step: "5. Admin updates inventory",
-      method: "PATCH",
-      endpoint: "/products/123",
-      auth: "Admin token required",
-      validations: ["Stock updated", "Audit trail created", "Cache invalidated"],
+      step: "5. Run existing tests",
+      action: "Execute test collections for regression",
+      frequency: "As part of testing process",
     },
   ],
 };
@@ -317,139 +255,99 @@ export function ApiTestingSection() {
             </div>
           </div>
 
-          {/* API vs UI Testing Comparison */}
+          {/* My Bruno vs Postman Experience */}
           <div className="mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">API Testing vs UI Testing</h3>
-            <div className="overflow-x-auto">
-              <table className="w-full border border-gray-200 rounded-lg">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Aspect</th>
-                    <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">API Testing</th>
-                    <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">UI Testing</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  <tr>
-                    <td className="px-6 py-4 font-medium">Speed</td>
-                    <td className="px-6 py-4 text-green-600 font-medium">Very fast (milliseconds)</td>
-                    <td className="px-6 py-4 text-yellow-600">Slower (seconds)</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 font-medium">Stability</td>
-                    <td className="px-6 py-4 text-green-600 font-medium">More stable</td>
-                    <td className="px-6 py-4 text-yellow-600">UI changes frequently</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 font-medium">Coverage</td>
-                    <td className="px-6 py-4">Tests business logic</td>
-                    <td className="px-6 py-4">Tests user workflows</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 font-medium">Maintenance</td>
-                    <td className="px-6 py-4 text-green-600 font-medium">Lower maintenance</td>
-                    <td className="px-6 py-4 text-red-600">Higher maintenance</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 font-medium">Data Validation</td>
-                    <td className="px-6 py-4 text-green-600 font-medium">Direct data validation</td>
-                    <td className="px-6 py-4">Indirect through UI</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 font-medium">Environment</td>
-                    <td className="px-6 py-4 text-green-600 font-medium">Any environment</td>
-                    <td className="px-6 py-4">Requires UI environment</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* Tools Comparison - Bruno vs Postman */}
-          <div className="mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">API Testing Tools</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">My API Testing Tools Experience</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="border-l-4 border-purple-500 pl-4 bg-purple-50 p-6 rounded-r-lg">
                 <div className="flex items-center mb-4">
                   <Code className="text-purple-600 mr-3" size={24} />
-                  <h4 className="text-xl font-semibold text-purple-900">Bruno (Free & Open Source)</h4>
+                  <h4 className="text-xl font-semibold text-purple-900">Bruno (My Choice)</h4>
                 </div>
+
+                {/* My Bruno Experience */}
+                <div className="bg-white p-3 rounded border border-gray-200 mb-4">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-purple-600 mr-1" />
+                    <span className="text-xs font-semibold text-purple-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I prefer Bruno because it's free and simple to use. I only use Bruno because it has free collections
+                    - unlimited collections vs Postman's 3-collection limit. While Postman has a better UI, Bruno meets
+                    all my API testing needs without cost limitations.
+                  </p>
+                </div>
+
                 <div className="mb-4">
-                  <h5 className="font-semibold text-green-700 mb-3">Why Bruno?</h5>
+                  <h5 className="font-semibold text-green-700 mb-3">Why I Choose Bruno:</h5>
                   <ul className="text-sm text-purple-800 space-y-2">
-                    <li>• Completely free with no limitations</li>
-                    <li>• Offline-first approach (no cloud dependency)</li>
-                    <li>• Git-friendly (plain text files)</li>
+                    <li>• Completely free with unlimited collections</li>
+                    <li>• Simple and straightforward to use</li>
                     <li>• No account required</li>
-                    <li>• Fast and lightweight</li>
-                    <li>• Active open-source community</li>
+                    <li>• Meets all my testing needs</li>
+                    <li>• Environment variables and scripting support</li>
+                    <li>• Git-friendly for version control</li>
                   </ul>
-                </div>
-                <div className="bg-gray-800 text-white p-4 rounded text-xs font-mono">
-                  <div className="text-green-400">// Bruno Test Script</div>
-                  <div>req.setHeader('Authorization', 'Bearer ' + bru.getEnvVar('token'));</div>
-                  <div>
-                    <br />
-                  </div>
-                  <div>test('Status should be 200', function() {`{`}</div>
-                  <div>&nbsp;&nbsp;expect(res.getStatus()).to.equal(200);</div>
-                  <div>{`});`}</div>
-                  <div>
-                    <br />
-                  </div>
-                  <div>test('Response contains user data', function() {`{`}</div>
-                  <div>&nbsp;&nbsp;expect(res.getBody().user.name).to.equal('John Doe');</div>
-                  <div>{`});`}</div>
                 </div>
               </div>
 
               <div className="border-l-4 border-orange-500 pl-4 bg-orange-50 p-6 rounded-r-lg">
                 <div className="flex items-center mb-4">
                   <Server className="text-orange-600 mr-3" size={24} />
-                  <h4 className="text-xl font-semibold text-orange-900">Postman (Limited Free)</h4>
+                  <h4 className="text-xl font-semibold text-orange-900">Postman (Limited Use)</h4>
                 </div>
+
+                {/* My Postman Experience */}
+                <div className="bg-white p-3 rounded border border-gray-200 mb-4">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-orange-600 mr-1" />
+                    <span className="text-xs font-semibold text-orange-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    Postman has a better UI design and more polished interface, but the free tier limitation of only 3
+                    collections makes it impractical for my needs. I need more flexibility for different API test
+                    collections.
+                  </p>
+                </div>
+
                 <div className="mb-4">
-                  <h5 className="font-semibold text-red-700 mb-3">Postman Limitations:</h5>
+                  <h5 className="font-semibold text-red-700 mb-3">Why I Don't Use Postman:</h5>
                   <ul className="text-sm text-orange-800 space-y-2">
                     <li>• Limited to 3 collections in free tier</li>
-                    <li>• Team collaboration requires paid plan</li>
-                    <li>• Cloud dependency for sync</li>
-                    <li>• Account required for most features</li>
-                  </ul>
-                </div>
-                <div className="mb-4">
-                  <h5 className="font-semibold text-green-700 mb-3">When to Use Postman:</h5>
-                  <ul className="text-sm text-orange-800 space-y-2">
-                    <li>• Enterprise environments with budget</li>
-                    <li>• Advanced team collaboration needs</li>
-                    <li>• Extensive mock servers required</li>
-                    <li>• API documentation generation</li>
+                    <li>• Not enough for multiple projects</li>
+                    <li>• Need to pay for more collections</li>
+                    <li>• Bruno provides same functionality for free</li>
                   </ul>
                 </div>
 
                 {/* Tool Comparison Table */}
                 <div className="bg-white p-4 rounded border">
-                  <h5 className="font-semibold text-gray-900 mb-2">Feature Comparison</h5>
+                  <h5 className="font-semibold text-gray-900 mb-2">My Comparison</h5>
                   <div className="space-y-2 text-xs">
                     <div className="grid grid-cols-3 gap-2 font-medium text-gray-700">
-                      <span>Feature</span>
+                      <span>Aspect</span>
                       <span>Bruno</span>
-                      <span>Postman Free</span>
+                      <span>Postman</span>
                     </div>
                     <div className="grid grid-cols-3 gap-2">
                       <span>Collections</span>
-                      <span className="text-green-600">Unlimited</span>
-                      <span className="text-red-600">3 only</span>
+                      <span className="text-green-600">Unlimited ✓</span>
+                      <span className="text-red-600">3 only ✗</span>
                     </div>
                     <div className="grid grid-cols-3 gap-2">
-                      <span>Team Sharing</span>
-                      <span className="text-green-600">Via Git</span>
-                      <span className="text-yellow-600">Limited</span>
+                      <span>UI Design</span>
+                      <span className="text-yellow-600">Simple</span>
+                      <span className="text-green-600">Better ✓</span>
                     </div>
                     <div className="grid grid-cols-3 gap-2">
-                      <span>Price</span>
-                      <span className="text-green-600">Free</span>
-                      <span className="text-yellow-600">Free/$12+</span>
+                      <span>Cost</span>
+                      <span className="text-green-600">Free ✓</span>
+                      <span className="text-red-600">$12+/month</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2">
+                      <span>My Choice</span>
+                      <span className="text-green-600">Yes ✓</span>
+                      <span className="text-red-600">No ✗</span>
                     </div>
                   </div>
                 </div>
@@ -457,35 +355,152 @@ export function ApiTestingSection() {
             </div>
           </div>
 
-          {/* HTTP Methods - Detailed */}
+          {/* My Testing Workflow */}
           <div className="mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">REST API Fundamentals - HTTP Methods</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">My API Testing Workflow</h3>
+            <div className="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+              <h4 className="text-lg font-semibold text-yellow-900 mb-3 flex items-center">
+                <Settings className="mr-2 h-5 w-5" />
+                How I Actually Work with API Testing
+              </h4>
+
+              <div className="space-y-4">
+                {myTestingApproach.workflow.map((step, index) => (
+                  <div key={index} className="bg-white p-4 rounded border">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="font-semibold text-gray-900">{step.step}</h5>
+                      <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">{step.frequency}</span>
+                    </div>
+                    <p className="text-sm text-gray-700">{step.action}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <h5 className="font-semibold text-yellow-800 mb-2">Key Points About My API Testing:</h5>
+                <ul className="space-y-1 text-sm">
+                  <li>
+                    • <strong>Frequency:</strong> Really rarely write new tests - only when devs create new endpoints
+                  </li>
+                  <li>
+                    • <strong>CRUD Testing:</strong> Yes, I test Create, Read, Update, Delete operations when applicable
+                  </li>
+                  <li>
+                    • <strong>Status Code Validation:</strong> Always validate status codes (200, 404, 500) in script
+                    tests
+                  </li>
+                  <li>
+                    • <strong>Environment Setup:</strong> Use Bruno environments with variables like baseUrl, API keys
+                  </li>
+                  <li>
+                    • <strong>Focus:</strong> More time running existing tests than writing new ones
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-4 bg-yellow-100 p-3 rounded">
+                <p className="text-sm text-yellow-800">
+                  <strong>Reality Check:</strong> I don't write API tests frequently because most endpoints are created
+                  by developers who handle initial testing. I focus on comprehensive testing of new endpoints when they
+                  are developed, and maintaining existing test collections for regression testing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* HTTP Methods - Focused on What I Use */}
+          <div className="mb-12">
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">HTTP Methods I Test</h3>
             <div className="space-y-6">
               {httpMethods.map((method, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg p-6">
+                <div key={index} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
                   <div className="flex items-center mb-3">
                     <span className={`text-sm font-bold px-3 py-1 rounded ${method.color}`}>{method.method}</span>
                     <h4 className="text-lg font-semibold text-gray-900 ml-4">{method.title}</h4>
                   </div>
-                  <p className="text-gray-700 mb-3">{method.description}</p>
+                  <p className="text-gray-700 mb-4">{method.description}</p>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <h5 className="font-semibold text-gray-800 mb-2">Characteristics:</h5>
-                      <ul className="space-y-1 text-sm text-gray-600">
+                    <div className="bg-gray-50 p-4 rounded-lg">
+                      <h5 className="font-semibold text-gray-800 mb-3 flex items-center">
+                        <Settings className="h-4 w-4 mr-2" />
+                        Characteristics:
+                      </h5>
+                      <ul className="space-y-2 text-sm text-gray-700">
                         {method.characteristics.map((char, charIndex) => (
-                          <li key={charIndex}>• {char}</li>
+                          <li key={charIndex} className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <span>{char}</span>
+                          </li>
                         ))}
                       </ul>
                     </div>
+                    {method.method === "POST" && (
+                      <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <div className="flex items-center mb-2">
+                          <User className="h-4 w-4 text-green-600 mr-2" />
+                          <span className="text-sm font-semibold text-green-800">I Use This For:</span>
+                        </div>
+                        <p className="text-sm text-gray-700">
+                          Creating tenants, users, and other resources. I test with valid data, invalid data, and edge
+                          cases to ensure proper validation and error handling.
+                        </p>
+                      </div>
+                    )}
+                    {method.method === "GET" && (
+                      <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                        <div className="flex items-center mb-2">
+                          <User className="h-4 w-4 text-blue-600 mr-2" />
+                          <span className="text-sm font-semibold text-blue-800">I Use This For:</span>
+                        </div>
+                        <p className="text-sm text-gray-700">
+                          Retrieving data and testing API responses. I validate response structure, status codes, and
+                          data integrity.
+                        </p>
+                      </div>
+                    )}
+                    {method.method === "PUT" && (
+                      <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <div className="flex items-center mb-2">
+                          <User className="h-4 w-4 text-yellow-600 mr-2" />
+                          <span className="text-sm font-semibold text-yellow-800">I Use This For:</span>
+                        </div>
+                        <p className="text-sm text-gray-700">
+                          Updating entire resources. I test with complete data sets and verify idempotent behavior.
+                        </p>
+                      </div>
+                    )}
+                    {method.method === "PATCH" && (
+                      <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                        <div className="flex items-center mb-2">
+                          <User className="h-4 w-4 text-purple-600 mr-2" />
+                          <span className="text-sm font-semibold text-purple-800">I Use This For:</span>
+                        </div>
+                        <p className="text-sm text-gray-700">
+                          Partial updates when only specific fields need modification. More efficient than PUT.
+                        </p>
+                      </div>
+                    )}
+                    {method.method === "DELETE" && (
+                      <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <div className="flex items-center mb-2">
+                          <User className="h-4 w-4 text-red-600 mr-2" />
+                          <span className="text-sm font-semibold text-red-800">I Use This For:</span>
+                        </div>
+                        <p className="text-sm text-gray-700">
+                          Removing resources and testing proper cleanup. I verify idempotent behavior and proper error
+                          handling.
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* HTTP Status Codes - Detailed */}
+          {/* HTTP Status Codes */}
           <div className="mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">HTTP Status Codes</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">HTTP Status Codes I Validate</h3>
             <div className="space-y-6">
               {statusCodes.map((category, index) => (
                 <div key={index} className={`border-l-4 p-6 rounded-r-lg ${category.color}`}>
@@ -501,156 +516,26 @@ export function ApiTestingSection() {
                         <p className="text-xs text-gray-500">
                           <strong>Usage:</strong> {code.usage}
                         </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CRUD Operations - Detailed Examples */}
-          <div className="mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">CRUD Operations Testing</h3>
-            <div className="space-y-8">
-              {crudExamples.map((example, index) => (
-                <div key={index} className={`border-l-4 ${example.color} bg-white p-6 rounded-r-lg shadow-sm`}>
-                  <h4 className="font-semibold text-lg text-gray-900 mb-3 flex items-center">
-                    <span
-                      className={`text-xs font-medium px-2 py-1 rounded mr-3 ${
-                        example.method === "GET"
-                          ? "bg-green-100 text-green-800"
-                          : example.method === "POST"
-                          ? "bg-blue-100 text-blue-800"
-                          : example.method === "PUT"
-                          ? "bg-yellow-100 text-yellow-800"
-                          : "bg-red-100 text-red-800"
-                      }`}
-                    >
-                      {example.method}
-                    </span>
-                    {example.operation} Operation
-                  </h4>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h5 className="font-semibold text-gray-800 mb-2">Request Details:</h5>
-                      <div className="bg-gray-100 p-3 rounded text-sm font-mono mb-3">
-                        <div className="text-blue-600">
-                          {example.method} {example.endpoint}
-                        </div>
-                        {example.headers.map((header, headerIndex) => (
-                          <div key={headerIndex} className="text-gray-600">
-                            {header}
+                        {code.code === "200" && (
+                          <div className="mt-2 bg-green-50 p-2 rounded">
+                            <div className="flex items-center mb-1">
+                              <User className="h-4 w-4 text-green-600 mr-1" />
+                              <span className="text-xs font-semibold text-green-800">I Test This:</span>
+                            </div>
+                            <p className="text-xs text-gray-600">
+                              Always validate 200 status in my Bruno test scripts: expect(res.getStatus()).to.equal(200)
+                            </p>
                           </div>
-                        ))}
-                        {example.requestBody && (
-                          <>
-                            <div className="mt-2 text-gray-800">{JSON.stringify(example.requestBody, null, 2)}</div>
-                          </>
                         )}
                       </div>
-                    </div>
-
-                    <div>
-                      <h5 className="font-semibold text-gray-800 mb-2">Validations:</h5>
-                      <ul className="space-y-1 text-sm text-gray-700">
-                        {example.validations.map((validation, validationIndex) => (
-                          <li key={validationIndex} className="flex items-start">
-                            <CheckCircle className="text-green-500 mr-2 mt-1 flex-shrink-0" size={12} />
-                            <span>{validation}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Authentication Testing */}
-          <div className="mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Authentication Testing Scenarios</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              {authenticationScenarios.map((scenario, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">{scenario.title}</h4>
-                  <div className="bg-gray-100 p-3 rounded text-sm font-mono mb-4">{scenario.endpoint}</div>
-                  <h5 className="font-semibold text-gray-800 mb-2">Test Cases:</h5>
-                  <ul className="space-y-2 text-sm text-gray-700">
-                    {scenario.testCases.map((testCase, testIndex) => (
-                      <li key={testIndex} className="flex items-start">
-                        <AlertCircle className="text-blue-500 mr-2 mt-1 flex-shrink-0" size={12} />
-                        <span>{testCase}</span>
-                      </li>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Real-World Example */}
-          <div className="mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Real-World Example: Complete Workflow Testing</h3>
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg border-2 border-blue-200">
-              <h4 className="text-xl font-semibold text-blue-900 mb-2">{realWorldExample.title}</h4>
-              <p className="text-blue-800 mb-6">{realWorldExample.description}</p>
-
-              <div className="space-y-4">
-                {realWorldExample.workflows.map((workflow, index) => (
-                  <div key={index} className="bg-white p-4 rounded border-l-4 border-blue-500">
-                    <div className="flex items-center justify-between mb-2">
-                      <h5 className="font-semibold text-gray-900">{workflow.step}</h5>
-                      <span
-                        className={`text-xs font-medium px-2 py-1 rounded ${
-                          workflow.method === "GET"
-                            ? "bg-green-100 text-green-800"
-                            : workflow.method === "POST"
-                            ? "bg-blue-100 text-blue-800"
-                            : workflow.method === "PATCH"
-                            ? "bg-purple-100 text-purple-800"
-                            : "bg-gray-100 text-gray-800"
-                        }`}
-                      >
-                        {workflow.method}
-                      </span>
-                    </div>
-                    <div className="grid md:grid-cols-3 gap-4 text-sm">
-                      <div>
-                        <span className="font-medium text-gray-700">Endpoint:</span>
-                        <code className="block text-gray-600 font-mono">{workflow.endpoint}</code>
-                      </div>
-                      <div>
-                        <span className="font-medium text-gray-700">Auth:</span>
-                        <span className="block text-gray-600">{workflow.auth}</span>
-                      </div>
-                      <div>
-                        <span className="font-medium text-gray-700">Key Validations:</span>
-                        <ul className="text-gray-600 mt-1">
-                          {workflow.validations.map((validation, validationIndex) => (
-                            <li key={validationIndex}>• {validation}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6 bg-blue-100 p-4 rounded">
-                <h5 className="font-semibold text-blue-900 mb-2">Testing Strategy:</h5>
-                <p className="text-blue-800 text-sm">
-                  This complete workflow tests the entire business logic flow, ensuring inventory management, user
-                  permissions, payment processing, and data consistency work together seamlessly. Run this as an
-                  integration test suite to validate end-to-end functionality.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Best Practices - Comprehensive */}
+          {/* Best Practices */}
           <div className="mb-12">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">API Testing Best Practices</h3>
             <div className="grid md:grid-cols-2 gap-8">
@@ -686,36 +571,45 @@ export function ApiTestingSection() {
             </div>
           </div>
 
-          {/* Performance & Security Considerations */}
+          {/* My Tools Integration */}
           <div className="mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Performance & Security Testing</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="border-l-4 border-yellow-500 pl-4 bg-yellow-50 p-6 rounded-r-lg">
-                <h4 className="font-semibold text-yellow-900 mb-3 flex items-center">
-                  <Zap className="mr-2" size={20} />
-                  Performance Testing
-                </h4>
-                <ul className="space-y-2 text-sm text-yellow-800">
-                  <li>• Response time should be &lt; 200ms for most APIs</li>
-                  <li>• Load testing with expected concurrent users</li>
-                  <li>• Test with large payloads (1MB+ requests)</li>
-                  <li>• Validate memory usage and resource consumption</li>
-                  <li>• Test rate limiting and throttling behavior</li>
-                </ul>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">How I Use API Testing Tools Together</h3>
+            <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+              <h4 className="text-lg font-semibold text-blue-900 mb-3 flex items-center">
+                <Play className="mr-2 h-5 w-5" />
+                My Tool Integration Strategy
+              </h4>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded border">
+                  <h5 className="font-semibold text-blue-800 mb-2">Bruno (Formal API Testing):</h5>
+                  <ul className="space-y-1 text-sm">
+                    <li>• Create test collections for new endpoints</li>
+                    <li>• Write test scripts with status code validation</li>
+                    <li>• Use environment variables for different environments</li>
+                    <li>• Test CRUD operations systematically</li>
+                    <li>• Maintain regression test suites</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white p-4 rounded border">
+                  <h5 className="font-semibold text-blue-800 mb-2">DevTools (Real-time API Debugging):</h5>
+                  <ul className="space-y-1 text-sm">
+                    <li>• Debug API calls during manual testing</li>
+                    <li>• Inspect request/response in real-time</li>
+                    <li>• Check for integration issues quickly</li>
+                    <li>• Validate API behavior on-the-fly</li>
+                    <li>• Block requests to test error handling</li>
+                  </ul>
+                </div>
               </div>
 
-              <div className="border-l-4 border-red-500 pl-4 bg-red-50 p-6 rounded-r-lg">
-                <h4 className="font-semibold text-red-900 mb-3 flex items-center">
-                  <Shield className="mr-2" size={20} />
-                  Security Testing
-                </h4>
-                <ul className="space-y-2 text-sm text-red-800">
-                  <li>• SQL injection and NoSQL injection attacks</li>
-                  <li>• Authentication bypass attempts</li>
-                  <li>• Authorization testing (role-based access)</li>
-                  <li>• Input validation and sanitization</li>
-                  <li>• HTTPS enforcement and certificate validation</li>
-                </ul>
+              <div className="mt-4 bg-blue-100 p-3 rounded">
+                <p className="text-sm text-blue-800">
+                  <strong>My Workflow:</strong> I use DevTools for immediate debugging and issue discovery during manual
+                  testing, then create formal Bruno tests for new endpoints when developers add them. DevTools is daily
+                  use, Bruno is occasional but thorough.
+                </p>
               </div>
             </div>
           </div>

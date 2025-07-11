@@ -1,4 +1,4 @@
-import { Target, Code, GitBranch, RotateCcw } from "lucide-react";
+import { Target, Code, GitBranch, RotateCcw, User, Book } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -25,6 +25,9 @@ export function TestingTechniquesSection() {
                 <h4 className="font-semibold text-pink-800 mb-2">Code Coverage Formula:</h4>
                 <div className="bg-gray-100 p-3 rounded font-mono text-center">
                   <strong>Coverage = (Number of Executed Items / Total Number of Items) × 100%</strong>
+                </div>
+                <div className="mt-2 text-sm text-gray-600">
+                  <strong>Example:</strong> If code has 5 lines and you test 3 lines → Coverage = (3/5) × 100% = 60%
                 </div>
               </div>
             </div>
@@ -53,6 +56,19 @@ export function TestingTechniquesSection() {
                   Test cases: validateAge(20) and validateAge(15) achieve 100% statement coverage
                 </p>
               </div>
+
+              {/* My Experience with Statement Coverage */}
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-blue-600 mr-1" />
+                  <span className="text-xs font-semibold text-blue-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  I learned about statement coverage in QA courses, but as a functional tester, I don't use this
+                  technique directly. Developers handle code coverage analysis while I focus on testing user scenarios
+                  and business logic.
+                </p>
+              </div>
             </div>
 
             {/* Branch Coverage */}
@@ -77,6 +93,19 @@ export function TestingTechniquesSection() {
                 </div>
                 <p className="text-sm mt-2">Need tests for both true and false branches of the condition</p>
               </div>
+
+              {/* My Experience with Branch Coverage */}
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-green-600 mr-1" />
+                  <span className="text-xs font-semibold text-green-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  While I don't measure branch coverage formally, I naturally test different conditions in my functional
+                  testing - like testing features with different user roles or permission levels to ensure all paths
+                  work correctly.
+                </p>
+              </div>
             </div>
 
             {/* Condition Coverage */}
@@ -94,6 +123,19 @@ export function TestingTechniquesSection() {
                   <li>• More thorough than branch coverage</li>
                   <li>• May require multiple test cases</li>
                 </ul>
+              </div>
+
+              {/* My Experience with Condition Coverage */}
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-purple-600 mr-1" />
+                  <span className="text-xs font-semibold text-purple-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  This is theoretical knowledge from my QA training. In practice, I test various conditions through
+                  functional testing - like testing with different user roles, active/inactive states, or different
+                  input combinations.
+                </p>
               </div>
             </div>
 
@@ -164,6 +206,19 @@ export function TestingTechniquesSection() {
                   </div>
                 </div>
               </div>
+
+              {/* My Experience with Loop Testing */}
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-orange-600 mr-1" />
+                  <span className="text-xs font-semibold text-orange-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  I don't perform formal loop testing on code, but I do test similar scenarios functionally - like
+                  testing pagination with 0 items, 1 item, multiple items, or testing filters with empty/populated lists
+                  to ensure UI handles all cases properly.
+                </p>
+              </div>
             </div>
 
             {/* Path Testing */}
@@ -180,6 +235,23 @@ export function TestingTechniquesSection() {
                 </div>
                 <p className="text-sm mt-2">
                   This determines the minimum number of test cases needed for path coverage
+                </p>
+                <div className="mt-2 text-sm text-gray-600">
+                  <strong>Example:</strong> Function with 3 decision points needs minimum 4 test cases, but thorough
+                  testing often requires more
+                </div>
+              </div>
+
+              {/* My Experience with Path Testing */}
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-red-600 mr-1" />
+                  <span className="text-xs font-semibold text-red-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  I learned cyclomatic complexity in QA courses but don't calculate it in practice. However, I naturally
+                  test different user paths through the application - like different ways to create a case, various
+                  status changes, or different user roles accessing features.
                 </p>
               </div>
             </div>
@@ -225,6 +297,46 @@ export function TestingTechniquesSection() {
                     </tr>
                   </tbody>
                 </table>
+              </div>
+            </div>
+
+            {/* My Practical Testing Approach */}
+            <div className="mt-8 bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+              <h3 className="text-lg font-semibold text-blue-900 mb-3 flex items-center">
+                <Book className="mr-2 h-5 w-5" />
+                My Practical Testing Approach vs White-Box Theory
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-blue-800 mb-2">White-Box Theory (Learned in Courses):</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>• Statement coverage analysis</li>
+                    <li>• Branch coverage calculation</li>
+                    <li>• Cyclomatic complexity measurement</li>
+                    <li>• Code path analysis</li>
+                    <li>• Loop testing strategies</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-blue-800 mb-2">My Functional Testing Reality:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>• Testing different user scenarios</li>
+                    <li>• Various role and permission combinations</li>
+                    <li>• Different data states (empty, populated, invalid)</li>
+                    <li>• Multiple user workflows and paths</li>
+                    <li>• Business logic validation</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-4 bg-blue-100 p-3 rounded">
+                <p className="text-sm">
+                  <strong>Key Insight:</strong> While I learned white-box techniques in QA courses, my daily work
+                  focuses on black-box functional testing. However, understanding these concepts helps me appreciate the
+                  testing done by developers and ensures comprehensive coverage from a user perspective.
+                </p>
               </div>
             </div>
 

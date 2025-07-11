@@ -1,4 +1,4 @@
-import { Book, Search, Check, User, Shield } from "lucide-react";
+import { Book, Search, Check, User, Shield, Brain } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -48,7 +48,27 @@ export function IntroductionSection() {
               </div>
             </div>
 
-            <div className="bg-green-50 p-6 rounded-lg">
+            {/* Simple Skills Section */}
+            <div className="bg-purple-50 p-6 rounded-lg mb-6">
+              <h3 className="text-xl font-semibold text-purple-900 mb-4 flex items-center">
+                <Brain className="mr-2 h-5 w-5" />
+                Essential QA Skills
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-semibold text-purple-800 mb-2">Technical:</h4>
+                  <p className="text-sm text-gray-700">
+                    Test case writing, bug reporting, automation tools, API testing
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-purple-800 mb-2">Soft Skills:</h4>
+                  <p className="text-sm text-gray-700">Attention to detail, analytical thinking, clear communication</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-green-50 p-6 rounded-lg mb-6">
               <h3 className="text-xl font-semibold text-green-900 mb-4">Real-World Impact</h3>
               <p className="text-gray-700 mb-4">
                 Consider major companies like <strong>Tesco</strong> - their e-commerce platform handles millions of
@@ -62,6 +82,23 @@ export function IntroductionSection() {
                   An airline booking system must handle seat selection, payment processing, and passenger data
                   accurately. One bug in the payment gateway could result in double charges or failed bookings,
                   affecting thousands of travelers.
+                </p>
+              </div>
+            </div>
+
+            {/* Simple My Experience */}
+            <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">My Experience as QA Tester</h3>
+              <p className="text-gray-700 mb-3">
+                I work as a QA Tester using tools like <strong>TestRail</strong> for test management,{" "}
+                <strong>Cypress</strong> for automation, and <strong>Bruno/Postman</strong> for API testing. My daily
+                work includes writing test cases, finding bugs, and collaborating with developers using{" "}
+                <strong>Jira Kanban</strong>.
+              </p>
+              <div className="bg-blue-100 p-3 rounded">
+                <p className="text-sm">
+                  <strong>Key Achievement:</strong> Implemented automated testing that reduced manual testing time by
+                  60% and caught critical bugs before production.
                 </p>
               </div>
             </div>

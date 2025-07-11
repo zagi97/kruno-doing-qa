@@ -1,4 +1,4 @@
-import { Layers, ArrowRight } from "lucide-react";
+import { Layers, ArrowRight, User, Calendar, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -56,6 +56,18 @@ export function SdlcSection() {
                   </div>
                 ))}
               </div>
+
+              {/* My Experience with Waterfall */}
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-blue-600 mr-1" />
+                  <span className="text-xs font-semibold text-blue-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  I've worked on projects using Waterfall where all requirements were defined upfront. Testing happened
+                  only after development was complete, which sometimes led to late bug discoveries and expensive fixes.
+                </p>
+              </div>
             </div>
 
             {/* V-Model */}
@@ -81,6 +93,19 @@ export function SdlcSection() {
                 <p className="text-sm">
                   <strong>Key Benefit:</strong> Testing strategies are planned during corresponding development phases,
                   leading to better test coverage and early defect detection.
+                </p>
+              </div>
+
+              {/* My Experience with V-Model */}
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-green-600 mr-1" />
+                  <span className="text-xs font-semibold text-green-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  While V-Model principles are good in theory, my current project doesn't follow them. I'm not included
+                  in sprint planning or design meetings, so I can't plan tests early. I test after code is deployed to
+                  test environment - more like Waterfall approach within Agile sprints.
                 </p>
               </div>
             </div>
@@ -110,6 +135,54 @@ export function SdlcSection() {
                   <li>• Continuous feedback</li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* My Experience with Agile */}
+          <div className="mt-8 bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+            <h3 className="text-lg font-semibold text-purple-900 mb-3 flex items-center">
+              <Users className="mr-2 h-5 w-5" />
+              My Experience Working in Agile
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-white p-4 rounded border">
+                <h4 className="font-semibold text-purple-800 mb-2 flex items-center">
+                  <Calendar className="mr-1 h-4 w-4" />
+                  Sprint Workflow:
+                </h4>
+                <ul className="space-y-1 text-sm">
+                  <li>
+                    • <strong>Sprint Planning:</strong> I review user stories and acceptance criteria
+                  </li>
+                  <li>
+                    • <strong>Daily Testing:</strong> Test features as developers complete them
+                  </li>
+                  <li>
+                    • <strong>Sprint Review:</strong> Demo tested features to stakeholders
+                  </li>
+                  <li>
+                    • <strong>Retrospectives:</strong> Discuss testing improvements
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-white p-4 rounded border">
+                <h4 className="font-semibold text-purple-800 mb-2">My Daily Activities:</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>• Participate in daily standups to discuss testing progress</li>
+                  <li>• Collaborate with developers on testable requirements</li>
+                  <li>• Create test cases for current sprint stories</li>
+                  <li>• Execute regression tests for completed features</li>
+                  <li>• Report bugs immediately in Jira</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-4 bg-purple-100 p-3 rounded">
+              <p className="text-sm">
+                <strong>Key Advantage:</strong> In Agile, I can test features immediately and provide quick feedback,
+                which leads to faster bug fixes and better quality. I also help define "Definition of Done" for each
+                story.
+              </p>
             </div>
           </div>
         </CardContent>

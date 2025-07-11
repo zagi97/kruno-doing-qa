@@ -1,4 +1,4 @@
-import { Monitor, Network, Zap, WifiOff, Settings, Bug, Clock, Shield } from "lucide-react";
+import { Monitor, Network, Zap, WifiOff, Settings, Bug, Clock, Shield, User, CheckCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -110,6 +110,19 @@ export function DevToolsTestingSection() {
                     </p>
                   </div>
                 </div>
+
+                {/* My Network Tab Experience */}
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-green-600 mr-1" />
+                    <span className="text-xs font-semibold text-green-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I use the Network tab daily during testing to check API requests. I've found bugs like response
+                    problems, payload issues, status code problems, and missing properties in API responses. This is my
+                    primary tool for debugging integration issues.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -168,6 +181,19 @@ export function DevToolsTestingSection() {
                     </p>
                   </div>
                 </div>
+
+                {/* My Request Blocking Experience */}
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-red-600 mr-1" />
+                    <span className="text-xs font-semibold text-red-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    Yes, I use request blocking to test error handling! I block API calls to see what happens when they
+                    fail or are slow. This helps me verify that the application handles errors gracefully and shows
+                    appropriate messages to users.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -194,6 +220,19 @@ export function DevToolsTestingSection() {
                     <strong>How to Test:</strong> Network tab → Offline checkbox or throttle to "Offline"
                   </div>
                 </div>
+
+                {/* My Offline Testing Experience */}
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-orange-600 mr-1" />
+                    <span className="text-xs font-semibold text-orange-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I test offline scenarios and slow network conditions to see how the application behaves when
+                    connections are poor or unavailable. This helps identify user experience issues in real-world
+                    conditions.
+                  </p>
+                </div>
               </div>
 
               {/* Slow Network Testing */}
@@ -215,6 +254,18 @@ export function DevToolsTestingSection() {
                   <div className="bg-yellow-100 p-2 rounded text-xs">
                     <strong>Test Focus:</strong> Loading states, timeouts, progressive loading, image optimization
                   </div>
+                </div>
+
+                {/* My Slow Network Experience */}
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-yellow-600 mr-1" />
+                    <span className="text-xs font-semibold text-yellow-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I use network throttling to test how the app performs on slow connections. This helps me identify
+                    loading issues and ensure the application provides good feedback during slow operations.
+                  </p>
                 </div>
               </div>
             </div>
@@ -242,6 +293,19 @@ export function DevToolsTestingSection() {
                     <strong>Pro Tip:</strong> Filter by Error, Warning, Info levels to focus on critical issues
                   </div>
                 </div>
+
+                {/* My Console Experience */}
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-purple-600 mr-1" />
+                    <span className="text-xs font-semibold text-purple-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I check the Console sometimes for JavaScript errors during testing. Since I can see what's happening
+                    locally in the terminal, I mostly focus on the Network tab, but the Console helps when I need to
+                    debug specific error scenarios.
+                  </p>
+                </div>
               </div>
 
               {/* Security Testing */}
@@ -265,6 +329,98 @@ export function DevToolsTestingSection() {
                     <strong>Warning:</strong> Never share screenshots containing sensitive authentication data
                   </div>
                 </div>
+
+                {/* My Security Experience */}
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-red-600 mr-1" />
+                    <span className="text-xs font-semibold text-red-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I check if new features expose sensitive security data in API responses or requests. I look for
+                    things like passwords, tokens, or other sensitive information that shouldn't be visible in the
+                    Network tab.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* My DevTools Usage Reality */}
+            <div className="mt-8 bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+              <h3 className="text-lg font-semibold text-green-900 mb-3 flex items-center">
+                <CheckCircle className="mr-2 h-5 w-5" />
+                My Daily DevTools Usage vs Other Tools
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-green-800 mb-2">DevTools (Daily Use):</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>
+                      • <strong>Network tab:</strong> Primary tool for API debugging during manual testing
+                    </li>
+                    <li>
+                      • <strong>Request blocking:</strong> Test error handling scenarios
+                    </li>
+                    <li>
+                      • <strong>Network throttling:</strong> Test slow/offline conditions
+                    </li>
+                    <li>
+                      • <strong>Security checks:</strong> Look for exposed sensitive data
+                    </li>
+                    <li>
+                      • <strong>Console monitoring:</strong> Check for JavaScript errors
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-green-800 mb-2">Bruno/Postman (Rare Use):</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>
+                      • <strong>API test creation:</strong> Only when writing new API tests
+                    </li>
+                    <li>
+                      • <strong>Collection management:</strong> Organizing API test suites
+                    </li>
+                    <li>
+                      • <strong>Formal API testing:</strong> Structured API validation
+                    </li>
+                    <li>
+                      • <strong>Documentation:</strong> API endpoint documentation
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <h4 className="font-semibold text-green-800 mb-2">Bugs I've Found with DevTools:</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>
+                    • <strong>Response problems:</strong> Incorrect data returned from APIs
+                  </li>
+                  <li>
+                    • <strong>Payload issues:</strong> Missing or malformed request data
+                  </li>
+                  <li>
+                    • <strong>Status code problems:</strong> Wrong HTTP status codes (should be 200 but getting 500)
+                  </li>
+                  <li>
+                    • <strong>Missing properties:</strong> Expected fields not present in API responses
+                  </li>
+                  <li>
+                    • <strong>Security issues:</strong> Sensitive data exposed in network requests
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mt-4 bg-green-100 p-3 rounded">
+                <p className="text-sm">
+                  <strong>My Approach:</strong> DevTools is my go-to debugging tool during manual testing. I use it
+                  daily to inspect API calls, test error scenarios, and validate responses. Bruno/Postman are mainly for
+                  formal API test creation, but DevTools is where I do most of my real-time API debugging and issue
+                  discovery.
+                </p>
               </div>
             </div>
 

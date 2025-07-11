@@ -1,4 +1,16 @@
-import { BarChart, Users, AlertTriangle, Database, Zap, Shield, UserCheck, RotateCcw, Clock } from "lucide-react";
+import {
+  BarChart,
+  Users,
+  AlertTriangle,
+  Database,
+  Zap,
+  Shield,
+  UserCheck,
+  RotateCcw,
+  Clock,
+  User,
+  Monitor,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -88,6 +100,18 @@ export function NonFunctionalSection() {
                     </div>
                   </div>
                 </div>
+
+                {/* My Load Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-green-600 mr-1" />
+                    <span className="text-xs font-semibold text-green-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I learned load testing with JMeter during company training but haven't applied it to real projects
+                    yet. This is an area I'm ready to implement when project needs arise.
+                  </p>
+                </div>
               </div>
 
               {/* Stress Testing */}
@@ -124,6 +148,18 @@ export function NonFunctionalSection() {
                     </p>
                   </div>
                 </div>
+
+                {/* My Stress Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-orange-600 mr-1" />
+                    <span className="text-xs font-semibold text-orange-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I practiced stress testing scenarios during JMeter training but haven't used this on actual
+                    projects. This is part of my performance testing skillset ready for implementation.
+                  </p>
+                </div>
               </div>
 
               {/* Volume Testing */}
@@ -159,6 +195,18 @@ export function NonFunctionalSection() {
                     </div>
                   </div>
                 </div>
+
+                {/* My Volume Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-blue-600 mr-1" />
+                    <span className="text-xs font-semibold text-blue-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I learned volume testing concepts during JMeter training but haven't applied this to production
+                    environments. This is theoretical knowledge ready for practical application.
+                  </p>
+                </div>
               </div>
 
               {/* Spike Testing */}
@@ -189,6 +237,18 @@ export function NonFunctionalSection() {
                     </div>
                   </div>
                 </div>
+
+                {/* My Spike Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-purple-600 mr-1" />
+                    <span className="text-xs font-semibold text-purple-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I learned spike testing during JMeter training but haven't implemented this in real projects. This
+                    is part of my performance testing knowledge base.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -216,6 +276,19 @@ export function NonFunctionalSection() {
                     <code className="ml-1 bg-white px-1 rounded">{"' OR '1'='1"}</code>
                   </div>
                 </div>
+
+                {/* My Security Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-red-600 mr-1" />
+                    <span className="text-xs font-semibold text-red-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I learned security testing in courses but don't do formal security testing. My security focus is
+                    basic: checking if passwords are hidden in API responses and testing user permissions/role-based
+                    access.
+                  </p>
+                </div>
               </div>
 
               {/* Usability Testing */}
@@ -238,6 +311,19 @@ export function NonFunctionalSection() {
                   <div className="bg-green-100 p-2 rounded text-xs">
                     <strong>Example:</strong> Can a new user complete checkout process within 3 minutes without help?
                   </div>
+                </div>
+
+                {/* My Usability Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-green-600 mr-1" />
+                    <span className="text-xs font-semibold text-green-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    Yes! I test from a user experience perspective - I think about people who will use the app. When I
+                    find usability problems, I report them to the project owner. They make the final decision about
+                    changes, but I provide the user perspective.
+                  </p>
                 </div>
               </div>
 
@@ -272,6 +358,18 @@ export function NonFunctionalSection() {
                     </div>
                   </div>
                 </div>
+
+                {/* My Compatibility Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-blue-600 mr-1" />
+                    <span className="text-xs font-semibold text-blue-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I regularly test on Chrome, Edge, and Firefox. I also test responsive design using DevTools and on
+                    actual mobile phones to ensure the app works properly across different devices and screen sizes.
+                  </p>
+                </div>
               </div>
 
               {/* Reliability Testing */}
@@ -299,6 +397,74 @@ export function NonFunctionalSection() {
                     </ul>
                   </div>
                 </div>
+
+                {/* My Reliability Testing Experience */}
+                <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-purple-600 mr-1" />
+                    <span className="text-xs font-semibold text-purple-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I don't do formal reliability testing, but I naturally test system stability during long testing
+                    sessions. As hours pass while I'm doing my job, the app keeps working - that's my "unintentional"
+                    reliability testing!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* My Non-Functional Testing Reality */}
+            <div className="mt-8 bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+              <h3 className="text-lg font-semibold text-yellow-900 mb-3 flex items-center">
+                <Monitor className="mr-2 h-5 w-5" />
+                My Non-Functional Testing Reality
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-green-800 mb-2">What I Actually Do:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>
+                      • <strong>Usability Testing:</strong> User experience perspective, report UX issues
+                    </li>
+                    <li>
+                      • <strong>Compatibility Testing:</strong> Chrome, Edge, Firefox, responsive design
+                    </li>
+                    <li>
+                      • <strong>Basic Security:</strong> User permissions, password visibility in responses
+                    </li>
+                    <li>
+                      • <strong>Reliability (Informal):</strong> System works during long testing sessions
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-red-800 mb-2">Areas I Don't Focus On:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>
+                      • <strong>Performance Testing:</strong> JMeter knowledge but not on projects yet
+                    </li>
+                    <li>
+                      • <strong>Formal Security Testing:</strong> Only learned in courses
+                    </li>
+                    <li>
+                      • <strong>Metrics-Based Reliability:</strong> Don't measure MTBF/MTTR
+                    </li>
+                    <li>
+                      • <strong>Volume Testing:</strong> Training only, not in practice
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-4 bg-yellow-100 p-3 rounded">
+                <p className="text-sm">
+                  <strong>Honest Assessment:</strong> I naturally do usability and compatibility testing as part of
+                  functional testing. Performance and security testing are areas where I have theoretical knowledge but
+                  limited practical application. I focus on what users will experience rather than formal non-functional
+                  metrics.
+                </p>
               </div>
             </div>
           </div>

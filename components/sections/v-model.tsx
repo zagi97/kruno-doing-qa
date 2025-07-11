@@ -1,4 +1,4 @@
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight, User, AlertTriangle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -131,6 +131,56 @@ export function VModelSection() {
                     <li>• High risk for complex projects</li>
                   </ul>
                 </div>
+              </div>
+            </div>
+
+            {/* My Experience with V-Model */}
+            <div className="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+              <h3 className="text-lg font-semibold text-orange-900 mb-3 flex items-center">
+                <AlertTriangle className="mr-2 h-5 w-5" />
+                My Reality: V-Model vs Actual Practice
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-green-800 mb-2">V-Model Theory:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>• QA involved in requirements review</li>
+                    <li>• Test cases planned during design</li>
+                    <li>• Early defect prevention</li>
+                    <li>• Parallel planning and execution</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-semibold text-red-800 mb-2">My Current Process:</h4>
+                  <ul className="space-y-1 text-sm">
+                    <li>• Not included in sprint planning/design</li>
+                    <li>• Test after code is deployed to test env</li>
+                    <li>• Sequential: Dev finishes → QA tests</li>
+                    <li>• More like Waterfall within Agile sprints</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+                <div className="flex items-center mb-1">
+                  <User className="h-4 w-4 text-orange-600 mr-1" />
+                  <span className="text-xs font-semibold text-orange-800">My Experience:</span>
+                </div>
+                <p className="text-xs text-gray-600 italic">
+                  My workflow: Task created in Jira → Developer works on it → Code merged to test environment → I test
+                  the story/task → Approve (Done) or Disapprove (back to dev). I understand V-Model benefits but haven't
+                  worked in an environment that truly implements it.
+                </p>
+              </div>
+
+              <div className="mt-4 bg-orange-100 p-3 rounded">
+                <p className="text-sm">
+                  <strong>Lesson Learned:</strong> While V-Model provides excellent early defect prevention, many teams
+                  still operate in Waterfall-style sequences. I'd prefer more involvement in early phases to implement
+                  true V-Model principles.
+                </p>
               </div>
             </div>
           </div>

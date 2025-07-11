@@ -1,4 +1,4 @@
-import { Play, Eye } from "lucide-react";
+import { Play, Eye, User, BarChart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -55,6 +55,19 @@ export function StaticDynamicSection() {
                     screen readers.
                   </p>
                 </div>
+
+                {/* My Experience with Static Testing */}
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-blue-600 mr-1" />
+                    <span className="text-xs font-semibold text-blue-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I don't participate in formal code reviews or use static analysis tools. My "static testing" is
+                    mainly reading user stories and discussing them in team meetings. Sometimes in daily meetings I
+                    might spot potential issues and say "hey, we need to think about this problem."
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -104,6 +117,19 @@ export function StaticDynamicSection() {
                     test authentication logic.
                   </p>
                 </div>
+
+                {/* My Experience with Dynamic Testing */}
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-green-600 mr-1" />
+                    <span className="text-xs font-semibold text-green-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    This is 95%+ of my work! I do manual testing, Cypress automation, API testing with Bruno, and test
+                    across multiple environments: local, test, staging, and smoke testing on production. Functional
+                    testing is what I do most.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -143,6 +169,71 @@ export function StaticDynamicSection() {
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          {/* My Testing Reality */}
+          <div className="mt-8 bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+            <h3 className="text-lg font-semibold text-purple-900 mb-3 flex items-center">
+              <BarChart className="mr-2 h-5 w-5" />
+              My Testing Reality: 95% Dynamic, 5% Static
+            </h3>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-white p-4 rounded border">
+                <h4 className="font-semibold text-purple-800 mb-2">My Dynamic Testing:</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>
+                    • <strong>Manual Testing:</strong> Testing user stories after development
+                  </li>
+                  <li>
+                    • <strong>Cypress Automation:</strong> Automated regression testing
+                  </li>
+                  <li>
+                    • <strong>API Testing:</strong> Using Bruno/Postman for backend testing
+                  </li>
+                  <li>
+                    • <strong>Multi-Environment:</strong> Local, test, staging, production smoke tests
+                  </li>
+                  <li>
+                    • <strong>Functional Focus:</strong> Primarily testing feature functionality
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded border">
+                <h4 className="font-semibold text-purple-800 mb-2">My Limited Static Testing:</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>
+                    • <strong>User Story Reviews:</strong> Reading and discussing stories with team
+                  </li>
+                  <li>
+                    • <strong>Team Discussions:</strong> Spotting issues during daily meetings
+                  </li>
+                  <li>
+                    • <strong>No Code Reviews:</strong> Don't participate in formal code reviews
+                  </li>
+                  <li>
+                    • <strong>No Static Tools:</strong> Don't use automated static analysis
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+              <h4 className="font-semibold text-purple-800 mb-2">Example Bug Found:</h4>
+              <p className="text-sm text-gray-700">
+                <strong>Dynamic Testing Success:</strong> Found permission issues where certain user roles couldn't
+                access features they should have. This was discovered through actual testing, not code review.
+              </p>
+            </div>
+
+            <div className="mt-4 bg-purple-100 p-3 rounded">
+              <p className="text-sm">
+                <strong>My Approach:</strong> While static testing has benefits, my role focuses heavily on dynamic
+                testing. I validate actual functionality through hands-on testing rather than code analysis, which
+                aligns with my current project setup.
+              </p>
             </div>
           </div>
         </CardContent>
