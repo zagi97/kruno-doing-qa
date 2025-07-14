@@ -1,4 +1,4 @@
-import { CuboidIcon as Cube, Code, RotateCcw } from "lucide-react";
+import { CuboidIcon as Cube, Code, RotateCcw, User, FileText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/header-section";
 
@@ -75,6 +75,19 @@ export function BlackWhiteBoxSection() {
                     destinations without knowing the backend database structure.
                   </p>
                 </div>
+
+                {/* My Black Box Experience */}
+                <div className="bg-white text-gray-900 p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-gray-600 mr-1" />
+                    <span className="text-xs font-semibold text-gray-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    This is mainly what I do! I get a Jira task → read the requirements → test the functionality on the
+                    web app. I don't think about formal black box techniques, I just test what the feature should do
+                    without looking at code.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -130,6 +143,19 @@ export function BlackWhiteBoxSection() {
                     network timeout) are properly tested.
                   </p>
                 </div>
+
+                {/* My White Box Experience */}
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <div className="flex items-center mb-1">
+                    <User className="h-4 w-4 text-blue-600 mr-1" />
+                    <span className="text-xs font-semibold text-blue-800">My Experience:</span>
+                  </div>
+                  <p className="text-xs text-gray-600 italic">
+                    I only use white box testing for Cypress automation tests. I need to look at the code to add global
+                    attributes or understand the DOM structure for my test selectors. Otherwise, developers handle most
+                    white box testing.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -172,6 +198,136 @@ export function BlackWhiteBoxSection() {
                   queries.
                 </p>
               </div>
+            </div>
+
+            {/* My Gray Box Experience */}
+            <div className="mt-4 bg-white p-3 rounded border border-gray-200">
+              <div className="flex items-center mb-1">
+                <User className="h-4 w-4 text-purple-600 mr-1" />
+                <span className="text-xs font-semibold text-purple-800">My Experience:</span>
+              </div>
+              <p className="text-xs text-gray-600 italic">
+                This describes my API testing perfectly! When I test APIs in Bruno/Postman or Swagger, I know the API
+                structure and endpoints, but I don't know the internal backend code. I understand what the API should do
+                but not how it's implemented.
+              </p>
+            </div>
+          </div>
+
+          {/* My Real Testing Approach */}
+          <div className="mt-8 bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+            <h3 className="text-lg font-semibold text-green-900 mb-3 flex items-center">
+              <FileText className="mr-2 h-5 w-5" />
+              My Real Testing Approach
+            </h3>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-white p-4 rounded border">
+                <h4 className="font-semibold text-green-800 mb-2">Black Box (Most Used):</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>
+                    • <strong>Daily workflow:</strong> Jira task → read → test on web app
+                  </li>
+                  <li>
+                    • <strong>No code knowledge:</strong> Just test functionality
+                  </li>
+                  <li>
+                    • <strong>Focus:</strong> Does the feature work as expected?
+                  </li>
+                  <li>
+                    • <strong>Approach:</strong> User perspective testing
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded border">
+                <h4 className="font-semibold text-green-800 mb-2">Gray Box (API Testing):</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>
+                    • <strong>Bruno/Postman:</strong> Know API structure
+                  </li>
+                  <li>
+                    • <strong>Swagger testing:</strong> Understand endpoints
+                  </li>
+                  <li>
+                    • <strong>Limited knowledge:</strong> API specs but not backend code
+                  </li>
+                  <li>
+                    • <strong>Integration focus:</strong> How APIs connect
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded border">
+                <h4 className="font-semibold text-green-800 mb-2">White Box (Cypress Only):</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>
+                    • <strong>Automation tests:</strong> Need to see DOM structure
+                  </li>
+                  <li>
+                    • <strong>Global attributes:</strong> Add test selectors to code
+                  </li>
+                  <li>
+                    • <strong>Limited use:</strong> Only for Cypress automation
+                  </li>
+                  <li>
+                    • <strong>Purpose:</strong> Create reliable test selectors
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-4 bg-green-100 p-3 rounded">
+              <p className="text-sm text-green-800">
+                <strong>My Reality:</strong> I mainly do black box testing without thinking about formal techniques.
+                When I get a Jira task, I just test the feature like a user would. I only need code knowledge for
+                Cypress tests or when testing APIs where I know the structure but not the implementation.
+              </p>
+            </div>
+          </div>
+
+          {/* When Each Approach is Used */}
+          <div className="mt-8 bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+            <h3 className="text-lg font-semibold text-yellow-900 mb-3">When I Use Each Approach</h3>
+
+            <div className="space-y-4">
+              <div className="bg-white p-4 rounded border">
+                <h4 className="font-semibold text-yellow-800 mb-2">Black Box Testing Examples:</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>• Testing new form functionality from Jira task</li>
+                  <li>• Checking if login page works correctly</li>
+                  <li>• Validating user permissions and role access</li>
+                  <li>• Testing business workflows without seeing code</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded border">
+                <h4 className="font-semibold text-yellow-800 mb-2">Gray Box Testing Examples:</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>• Testing user creation API in Bruno with known endpoints</li>
+                  <li>• Validating API responses without knowing backend logic</li>
+                  <li>• Integration testing between frontend and API</li>
+                  <li>• Swagger testing with API documentation</li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-4 rounded border">
+                <h4 className="font-semibold text-yellow-800 mb-2">White Box Testing Examples:</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>• Adding data-cy attributes to elements for Cypress tests</li>
+                  <li>• Understanding DOM structure for automation selectors</li>
+                  <li>• Looking at code to write better Cypress tests</li>
+                  <li>• Global configuration changes for test environment</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-4 bg-yellow-100 p-3 rounded">
+              <p className="text-sm text-yellow-800">
+                <strong>Key Insight:</strong> I don't think about these categories when testing - I just use whatever
+                knowledge I have available. Most of my testing is naturally black box because I test features like users
+                would use them.
+              </p>
             </div>
           </div>
         </CardContent>
