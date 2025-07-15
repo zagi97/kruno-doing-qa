@@ -27,6 +27,10 @@ A comprehensive web-based guide covering software testing fundamentals, methodol
 - **Testing Techniques** - Black box, white box, and testing methods
 - **Performance Testing** - Load, stress, volume, and spike testing
 - **Non-Functional Testing** - Security, usability, and compatibility
+- **DevTools Testing** - Using browser tools to inspect and debug web apps
+- **API Testing** - Validating RESTful APIs with tools like Postman or Bruno
+- **Mobile Testing** - Testing on real devices and emulators
+- **Black Box vs White Box** - Input/output testing vs internal logic verification
 
 ### **Test Management**
 - **Bug Reporting** - Effective defect identification and documentation
@@ -34,8 +38,11 @@ A comprehensive web-based guide covering software testing fundamentals, methodol
 - **Regression Testing** - Ensuring existing functionality works
 - **Smoke Testing** - Basic functionality validation
 
-### **Automation**
+### **Automation & Tools**
 - **Cypress Testing** - Modern web automation framework
+- **JMeter** - Load and performance testing for web apps
+- **Test Management Tools** - Overview of tools like TestRail and Jira
+
 
 ## ✨ Key Features
 
