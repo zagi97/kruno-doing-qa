@@ -160,6 +160,73 @@ export function JMeterSection() {
           icon={Settings}
         />
         <CardContent className="p-8">
+          {/* Author Experience */}
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg mb-12 border-l-4 border-blue-500">
+            <h3 className="text-xl font-semibold text-blue-900 mb-4 flex items-center">
+              <Users className="mr-3" size={24} />
+              My JMeter Learning Journey
+            </h3>
+            <div className="bg-white p-6 rounded-lg">
+              <p className="text-gray-700 mb-4">
+                <strong>Full transparency:</strong> I'm currently learning JMeter through online courses and YouTube
+                tutorials, and haven't used it on real projects yet. As a QA tester with experience in Cypress,
+                Bruno/Postman, and manual testing, I recognize that performance testing is a crucial skill gap I want to
+                fill.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-4">
+                <div>
+                  <h4 className="font-semibold text-blue-800 mb-2">Learning Resources I'm Using:</h4>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li>
+                      •{" "}
+                      <a
+                        href="https://www.youtube.com/playlist?list=PLUDwpEzHYYLs33uFHeIJo-6eU92IoiMZ7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 underline"
+                      >
+                        JMeter Tutorial Playlist
+                      </a>{" "}
+                      - Comprehensive video series
+                    </li>
+                    <li>
+                      •{" "}
+                      <a
+                        href="https://www.youtube.com/watch?v=SoW2pBak1_Q&t=8772s"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 underline"
+                      >
+                        JMeter Complete Course
+                      </a>{" "}
+                      - 3+ hour detailed tutorial
+                    </li>
+                    <li>• Official Apache JMeter documentation</li>
+                    <li>• Practice with sample applications</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-blue-800 mb-2">Biggest Learning Challenge:</h4>
+                  <div className="bg-yellow-50 p-3 rounded text-sm text-gray-700">
+                    Understanding JMeter's component hierarchy and concepts like throughput, listeners, timers, and how
+                    they all work together was initially overwhelming. The terminology and relationships between
+                    components took time to grasp.
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-green-50 p-4 rounded">
+                <p className="text-sm text-green-800">
+                  <strong>Future Goal:</strong> I'm building this knowledge base to strengthen my performance testing
+                  skills and hope to apply JMeter in real projects soon. If you're also learning JMeter, you're not
+                  alone - performance testing can seem complex at first, but the concepts become clearer with practice.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* What is JMeter */}
           <div className="mb-12">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">What is Apache JMeter?</h3>

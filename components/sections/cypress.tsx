@@ -117,12 +117,12 @@ export function CypressSection() {
                     </div>
                     <div>
                       &nbsp;&nbsp;let testUserName = options.firstName || `Test User ${"{"}
-                      {Date.now()}
+                      1752559752964 {/* In real tests: Date.now() for unique names */}
                       {"}"}`;
                     </div>
                     <div>
                       &nbsp;&nbsp;const email = options.email || `testuser${"{"}
-                      {Date.now()}
+                      1752559752964 {/* In real tests: Date.now() for unique names */}
                       {"}"}
                       <span className="text-blue-400">@example.com</span>`;
                     </div>

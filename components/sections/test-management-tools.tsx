@@ -262,6 +262,23 @@ export function TestManagementToolsSection() {
           icon={Kanban}
         />
         <CardContent className="p-8">
+          {/* My Experience */}
+          <div className="bg-blue-50 p-4 rounded-lg mb-8 border-l-4 border-blue-500">
+            <h4 className="font-semibold mb-2">
+              <span className="text-orange-600">My Experience:</span>
+            </h4>
+            <p className="text-sm text-gray-700 mb-3">
+              I work as a QA Tester using tools like <strong>TestRail</strong> for test management,{" "}
+              <strong>Cypress</strong> for automation, and <strong>Bruno/Postman</strong> for API testing. My daily work
+              includes writing test cases, finding bugs, and collaborating with developers using{" "}
+              <strong>Jira Kanban</strong>.
+            </p>
+            <p className="text-sm text-gray-600">
+              <strong>Key Achievement:</strong> Used JIRA and TestRail for 2 years across two major projects - network
+              security threat detection and service provider platform.
+            </p>
+          </div>
+
           {/* What is Test Management */}
           <div className="mb-12">
             <h3 className="text-xl font-semibold text-gray-900 mb-4">What is Test Management?</h3>
@@ -362,6 +379,19 @@ export function TestManagementToolsSection() {
               <Kanban className="mr-3 text-blue-600" size={24} />
               JIRA Kanban Workflow for QA
             </h3>
+
+            {/* My Experience with Kanban */}
+            <div className="bg-white p-4 rounded-lg mb-6 border-l-4 border-orange-500">
+              <h4 className="font-semibold mb-2">
+                <span className="text-orange-600">My Experience:</span>
+              </h4>
+              <p className="text-sm text-gray-700">
+                I monitor JIRA "Ready for QA" column daily, read user stories and acceptance criteria, create test cases
+                in TestRail, then move stories to UAT (pass) or "Disapproved by QA" (fail). Biggest challenge:
+                developers not updating column status and empty user stories without acceptance criteria.
+              </p>
+            </div>
+
             <div className="bg-white p-4 rounded-lg border-l-4 border-blue-500 mb-6">
               <p className="text-blue-800 text-sm">
                 Kanban boards provide excellent visibility into work progress and help QA teams manage testing
@@ -535,6 +565,19 @@ export function TestManagementToolsSection() {
               <FileText className="mr-3 text-green-600" size={24} />
               TestRail Features & Capabilities
             </h3>
+
+            {/* My Experience with TestRail */}
+            <div className="bg-white p-4 rounded-lg mb-6 border-l-4 border-orange-500">
+              <h4 className="font-semibold mb-2">
+                <span className="text-orange-600">My Experience:</span>
+              </h4>
+              <p className="text-sm text-gray-700">
+                I use TestRail mostly separately from JIRA, though one project had TestRail extension in JIRA. I write
+                brief, clear test case titles that are understandable for me and others. I organize test cases by
+                features and link them to user stories.
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6">
               {testRailFeatures.map((feature, index) => (
                 <div key={index} className="bg-white border rounded-lg p-6 border-l-4 border-green-500">
